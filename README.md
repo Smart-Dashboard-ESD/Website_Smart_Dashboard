@@ -12,7 +12,7 @@ The repository is structured as follows:
 
 ### Prerequisites
 - ReactJS 18.2.0
-- NodeJS 16.16.0
+- NodeJS LTS
 
 
 ### Running the application
