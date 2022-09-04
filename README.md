@@ -1,4 +1,4 @@
-# Website_Smart_Dashboard
+# Website Smart Dashboard
 
 ## Repository Structure
 
