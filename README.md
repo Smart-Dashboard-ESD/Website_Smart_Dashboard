@@ -3,6 +3,7 @@
 ## Repository Structure
 
 The repository is structured as follows:
+
 - `main` is main branch of the repository and contains the latest stable version of the code.
 - `dev` is the development branch of the repository and contains the latest development version of the code.
 - `feature/feature_name` branches are used to develop new features and are merged into `dev` when they are ready.
@@ -11,11 +12,12 @@ The repository is structured as follows:
 ## Installation
 
 ### Prerequisites
+
 - ReactJS 18.2.0
 - NodeJS LTS
 
-
 ### Running the application
+
 ```bash
-npm i && run
+npm i && start
 ```
