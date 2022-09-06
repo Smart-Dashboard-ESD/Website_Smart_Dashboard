@@ -7,7 +7,7 @@ export default function Home() {
       <div className="">
         <Header />
       </div>
-      Home
+      <h1>Testing Inter Font</h1>
     </div>
   );
 }
