@@ -79,6 +79,7 @@ module.exports = {
         DarkActive: "#101010",
         Darker: "#0D0D0D",
       },
+      white: "#FFFFFF",
     },
   },
   plugins: [],
