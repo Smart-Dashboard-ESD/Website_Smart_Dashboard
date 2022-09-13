@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/img/logoptmulti.png";
 import avatar from "../assets/img/Avatar.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   HiOutlineChartSquareBar,
   HiOutlineCreditCard,
@@ -9,6 +9,8 @@ import {
 } from "react-icons/hi";
 
 export default function Sidebar() {
+  const location = useLocation();
+
   return (
     <div className="min-h-screen bg-white w-20 border-r lg:w-[297px] border-Neutral-LightActive">
       <Link to="/">
@@ -20,33 +22,44 @@ export default function Sidebar() {
         </div>
       </Link>
       <div className="w-16 lg:w-[250px] mx-auto mt-14 border-b border-Neutral-LightActive">
-        <Link to="/">
-          <div className="flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Primary-Normal hover:bg-Primary-Normal hover:text-white">
-            <HiOutlineChartSquareBar className="w-6 h-6 lg:ml-3 lg:mr-2" />
-            <span className="hidden text-base lg:block">Dashboard</span>
-          </div>
+        <Link
+          to="/"
+          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Primary-Normal hover:bg-Primary-NormalHover hover:text-white active:bg-Primary-NormalActive ${
+            location.pathname === "/" && "bg-Primary-NormalActive text-white"
+          }`}
+        >
+          <HiOutlineChartSquareBar className="w-6 h-6 lg:ml-3 lg:mr-2" />
+          <span className="hidden text-base lg:block">Dashboard</span>
         </Link>
       </div>
       <div className="hidden mt-5 ml-6 font-semibold lg:block text-Primary-Normal">
         Pembayaran
       </div>
       <div className="w-16 lg:w-[250px] mx-auto mt-5 lg:mt-1 border-b border-Neutral-LightActive">
-        <Link to="/tagihan">
-          <div className="flex items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Primary-Normal hover:bg-Primary-Normal hover:text-white">
-            <HiOutlineCreditCard className="w-6 h-6 lg:ml-3 lg:mr-2" />
-            <span className="hidden text-base lg:block">Tagihan</span>
-          </div>
+        <Link
+          to="/tagihan"
+          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Primary-Normal hover:bg-Primary-NormalHover hover:text-white active:bg-Primary-NormalActive ${
+            location.pathname === "/tagihan" &&
+            "bg-Primary-NormalActive text-white"
+          }`}
+        >
+          <HiOutlineCreditCard className="w-6 h-6 lg:ml-3 lg:mr-2" />
+          <span className="hidden text-base lg:block">Tagihan</span>
         </Link>
       </div>
       <div className="hidden mt-5 ml-6 font-semibold text-Primary-Normal lg:block">
         Customer Care
       </div>
       <div className="w-16 lg:w-[250px] mx-auto mt-5 lg:mt-1">
-        <Link to="/customer-care">
-          <div className="flex items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Primary-Normal hover:bg-Primary-Normal hover:text-white">
-            <HiOutlineUserGroup className="w-6 h-6 lg:ml-3 lg:mr-2" />
-            <span className="hidden text-base lg:block">Pusat Bantuan</span>
-          </div>
+        <Link
+          to="/customer-care"
+          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Primary-Normal hover:bg-Primary-NormalHover hover:text-white active:bg-Primary-NormalActive ${
+            location.pathname === "/customer-care" &&
+            "bg-Primary-NormalActive text-white"
+          }`}
+        >
+          <HiOutlineUserGroup className="w-6 h-6 lg:ml-3 lg:mr-2" />
+          <span className="hidden text-base lg:block">Pusat Bantuan</span>
         </Link>
       </div>
       <div className="w-16 lg:w-[260px] mx-auto mt-36 border-t border-Neutral-LightActive">
