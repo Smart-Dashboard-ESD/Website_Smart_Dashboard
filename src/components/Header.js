@@ -3,7 +3,7 @@ import { HiOutlineMenu, HiOutlineSearch } from "react-icons/hi";
 
 export default function Header() {
   return (
-    <div className="w-full h-10 lg:h-[131px] border-b border-Neutral-LightActive bg-white flex justify-end lg:justify-between">
+    <div className="w-full h-10 lg:h-[131px] bg-white flex justify-end lg:justify-between">
       <div>
         <HiOutlineMenu className="w-6 h-6 mt-14 ml-7" />
       </div>
