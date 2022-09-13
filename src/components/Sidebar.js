@@ -24,7 +24,7 @@ export default function Sidebar() {
       <div className="w-16 lg:w-[250px] mx-auto mt-14 border-b border-Neutral-LightActive">
         <Link
           to="/"
-          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Primary-Normal hover:bg-Primary-NormalHover hover:text-white active:bg-Primary-NormalActive ${
+          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-white active:bg-Primary-NormalActive ${
             location.pathname === "/" && "bg-Primary-NormalActive text-white"
           }`}
         >
@@ -32,13 +32,13 @@ export default function Sidebar() {
           <span className="hidden text-base lg:block">Dashboard</span>
         </Link>
       </div>
-      <div className="hidden mt-5 ml-6 font-semibold lg:block text-Primary-Normal">
+      <div className="hidden mt-5 ml-6 font-semibold lg:block text-Info-NormalHover">
         Pembayaran
       </div>
       <div className="w-16 lg:w-[250px] mx-auto mt-5 lg:mt-1 border-b border-Neutral-LightActive">
         <Link
           to="/tagihan"
-          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Primary-Normal hover:bg-Primary-NormalHover hover:text-white active:bg-Primary-NormalActive ${
+          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-white active:bg-Primary-NormalActive ${
             location.pathname === "/tagihan" &&
             "bg-Primary-NormalActive text-white"
           }`}
@@ -47,13 +47,13 @@ export default function Sidebar() {
           <span className="hidden text-base lg:block">Tagihan</span>
         </Link>
       </div>
-      <div className="hidden mt-5 ml-6 font-semibold text-Primary-Normal lg:block">
+      <div className="hidden mt-5 ml-6 font-semibold text-Info-NormalHover lg:block">
         Customer Care
       </div>
       <div className="w-16 lg:w-[250px] mx-auto mt-5 lg:mt-1">
         <Link
           to="/customer-care"
-          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Primary-Normal hover:bg-Primary-NormalHover hover:text-white active:bg-Primary-NormalActive ${
+          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-white active:bg-Primary-NormalActive ${
             location.pathname === "/customer-care" &&
             "bg-Primary-NormalActive text-white"
           }`}
@@ -74,7 +74,7 @@ export default function Sidebar() {
             <p className="hidden text-sm font-medium lg:block">
               Rizal Bimantoro
             </p>
-            <p className="hidden text-sm font-medium text-Primary-Normal lg:block">
+            <p className="hidden text-sm font-medium text-Info-Normal lg:block">
               rebimantoro@gmail.com
             </p>
           </div>
