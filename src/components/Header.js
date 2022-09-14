@@ -13,10 +13,11 @@ export default function Header() {
           Sudah cek konsumsi air hari ini? Yuk cek sekarang !
         </p>
       </div>
+      <div className="hidden lg:px-32 lg:block"></div>
       <div>
         <HiOutlineSearch className="absolute w-6 h-6 ml-[313px] mt-[58px] text-Info-Normal" />
         <input
-          className="h-12 border rounded-md w-80 mt-12 ml-[303px] pr-10 text-Primary-Normal border-Neutral-LightActive pl-10 mr-10 placeholder:text-Info-Normal"
+          className="h-12 border rounded-md w-80 mt-12 ml-[303px] pr-10 border-Neutral-LightActive pl-10 mr-10 placeholder:text-Info-Normal"
           placeholder="Search"
         ></input>
       </div>
