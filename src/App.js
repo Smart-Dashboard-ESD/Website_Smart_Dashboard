@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import CustomerCare from "./pages/CustomerCare";
 import DashboardUser from "./pages/DashboardUser";
