@@ -1,10 +1,10 @@
 import React from "react";
+import DoughnutChartSection from "../components/DoughnutChartSection";
 
 export default function DashboardUser() {
   return (
-    <div className="">
-      <div className=""></div>
-      <h1>Homepage</h1>
+    <div className="ml-[15px]">
+      <DoughnutChartSection />
     </div>
   );
 }
