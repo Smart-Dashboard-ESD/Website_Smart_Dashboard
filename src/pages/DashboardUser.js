@@ -1,6 +1,7 @@
 import React from "react";
 import BillingDate from "../components/BillingDate";
 import DoughnutChartSection from "../components/DoughnutChartSection";
+import History from "../components/History";
 
 export default function DashboardUser() {
   return (
@@ -9,6 +10,7 @@ export default function DashboardUser() {
         <DoughnutChartSection />
         <BillingDate />
       </div>
+      <History />
     </div>
   );
 }
