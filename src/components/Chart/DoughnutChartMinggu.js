@@ -3,21 +3,21 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip } from "chart.js";
 Chart.register(ArcElement, Tooltip);
 
-export default function DoughnutChart() {
+export default function DoughnutChartMinggu() {
   return (
     <div className="absolute left-0 ml-[77px] mt-7">
       <Doughnut
         data={{
-          labels: ["Penggunaan Malam", "Penggunaan Pagi"],
+          labels: ["Penggunaan Weekday", "Penggunaan Weekend"],
           datasets: [
             {
               label: "Penggunaan Air",
               data: [250, 130],
               backgroundColor: [
-                "rgba(2, 164, 177, 1)",
-                "rgba(184, 215, 232, 1)",
+                "rgba(214, 227, 179, 1)",
+                "rgba(243, 150, 10, 1)",
               ],
-              borderColor: ["rgba(2, 164, 177, 1)", "rgba(184, 215, 232, 1)"],
+              borderColor: ["rgba(214, 227, 179, 1)", "rgba(243, 150, 10, 1)"],
               cutout: "70%",
             },
           ],
