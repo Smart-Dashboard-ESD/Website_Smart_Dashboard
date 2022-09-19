@@ -46,7 +46,7 @@ export default function KotaDropdown() {
       </div>
       {showKota && (
         <div
-          className="absolute z-10 w-[251px] mt-2 bg-white rounded shadow-lg ring-1 ring-Info-NormalActive ring-opacity-5 focus:outline-none"
+          className="absolute overflow-y-auto h-[200px] z-10 w-[251px] mt-2 bg-white rounded shadow-lg ring-1 ring-Info-NormalActive ring-opacity-5 focus:outline-none"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
