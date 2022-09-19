@@ -29,7 +29,7 @@ module.exports = {
       Success: {
         Light: "#F2F6E7",
         LightHover: "#EBF2DA",
-        LightActive: "#B8D7E8",
+        LightActive: "#d6e3b3",
         Normal: "#1B7FB5",
         NormalHover: "#1872A3",
         NormalActive: "#166691",
