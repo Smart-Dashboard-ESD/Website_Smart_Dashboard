@@ -1,32 +1,59 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
-
-let useClickOutside = (handler) => {
-  let domNode = useRef();
-
-  useEffect(() => {
-    let maybeHandler = (event) => {
-      if (!domNode.current.contains(event.target)) {
-        handler();
-      }
-    };
-
-    document.addEventListener("mousedown", maybeHandler);
-
-    return () => {
-      document.removeEventListener("mousedown", maybeHandler);
-    };
-  });
-
-  return domNode;
-};
 
 export default function MonthDropdown() {
   const [showBulan, setShowBulan] = useState(false);
-
-  let domNode = useClickOutside(() => {
-    setShowBulan(false);
-  });
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [bulanList, setBulanList] = useState([
+    {
+      name: "Januari",
+      value: "Januari",
+    },
+    {
+      name: "Februari",
+      value: "Februari",
+    },
+    {
+      name: "Maret",
+      value: "Maret",
+    },
+    {
+      name: "April",
+      value: "April",
+    },
+    {
+      name: "May",
+      value: "May",
+    },
+    {
+      name: "Juni",
+      value: "Juni",
+    },
+    {
+      name: "Juli",
+      value: "Juli",
+    },
+    {
+      name: "Agustus",
+      value: "Agustus",
+    },
+    {
+      name: "September",
+      value: "September",
+    },
+    {
+      name: "Oktober",
+      value: "Oktober",
+    },
+    {
+      name: "November",
+      value: "November",
+    },
+    {
+      name: "Desember",
+      value: "Desember",
+    },
+  ]);
 
   return (
     <div>
@@ -38,9 +65,8 @@ export default function MonthDropdown() {
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
-          ref={domNode}
         >
-          September
+          {selectedIndex !== null ? bulanList[selectedIndex].name : "Bulan"}
           <HiChevronDown className="w-4 h-4" />
         </button>
       </div>
@@ -50,57 +76,21 @@ export default function MonthDropdown() {
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
-          tabindex="-1"
         >
           <div className="py-1" role="none">
-            <button
-              className="inline-flex w-[124px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-0"
-            >
-              Januari
-            </button>
-            <button
-              className="inline-flex w-[124px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-1"
-            >
-              Februari
-            </button>
-            <button
-              className="inline-flex w-[124px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-2"
-            >
-              Maret
-            </button>
-            <button
-              className="inline-flex w-[124px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-3"
-            >
-              April
-            </button>
-            <button
-              className="inline-flex w-[124px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-4"
-            >
-              Mei
-            </button>
-            <button
-              className="inline-flex w-[124px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-5"
-            >
-              Juni
-            </button>
+            {bulanList.map((item, index) => (
+              <button
+                className="inline-flex w-[124px] py-2 pl-3 text-sm text-Black-Normal"
+                role="menuitem"
+                key={item.name}
+                onClick={() => {
+                  setSelectedIndex(index);
+                  setShowBulan(false);
+                }}
+              >
+                {item.name}
+              </button>
+            ))}
           </div>
         </div>
       )}

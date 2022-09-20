@@ -1,33 +1,135 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
-
-let useClickOutside = (handler) => {
-  let domNode = useRef();
-
-  useEffect(() => {
-    let maybeHandler = (event) => {
-      if (!domNode.current.contains(event.target)) {
-        handler();
-      }
-    };
-
-    document.addEventListener("mousedown", maybeHandler);
-
-    return () => {
-      document.removeEventListener("mousedown", maybeHandler);
-    };
-  });
-
-  return domNode;
-};
 
 export default function DateDropdown() {
   const [showTanggal, setShowTanggal] = useState(false);
-
-  let domNode = useClickOutside(() => {
-    setShowTanggal(false);
-  });
-
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [tanggalList, setTanggalList] = useState([
+    {
+      name: "1",
+      value: "1",
+    },
+    {
+      name: "2",
+      value: "2",
+    },
+    {
+      name: "3",
+      value: "3",
+    },
+    {
+      name: "4",
+      value: "4",
+    },
+    {
+      name: "5",
+      value: "5",
+    },
+    {
+      name: "6",
+      value: "6",
+    },
+    {
+      name: "7",
+      value: "7",
+    },
+    {
+      name: "8",
+      value: "8",
+    },
+    {
+      name: "9",
+      value: "9",
+    },
+    {
+      name: "10",
+      value: "10",
+    },
+    {
+      name: "11",
+      value: "11",
+    },
+    {
+      name: "12",
+      value: "12",
+    },
+    {
+      name: "13",
+      value: "13",
+    },
+    {
+      name: "14",
+      value: "14",
+    },
+    {
+      name: "15",
+      value: "15",
+    },
+    {
+      name: "16",
+      value: "16",
+    },
+    {
+      name: "17",
+      value: "17",
+    },
+    {
+      name: "18",
+      value: "18",
+    },
+    {
+      name: "19",
+      value: "19",
+    },
+    {
+      name: "20",
+      value: "20",
+    },
+    {
+      name: "21",
+      value: "21",
+    },
+    {
+      name: "22",
+      value: "22",
+    },
+    {
+      name: "23",
+      value: "23",
+    },
+    {
+      name: "24",
+      value: "24",
+    },
+    {
+      name: "25",
+      value: "25",
+    },
+    {
+      name: "26",
+      value: "26",
+    },
+    {
+      name: "27",
+      value: "27",
+    },
+    {
+      name: "28",
+      value: "28",
+    },
+    {
+      name: "29",
+      value: "29",
+    },
+    {
+      name: "30",
+      value: "30",
+    },
+    {
+      name: "31",
+      value: "31",
+    },
+  ]);
   return (
     <div className="gap-x-2">
       <div>
@@ -38,9 +140,8 @@ export default function DateDropdown() {
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
-          ref={domNode}
         >
-          17
+          {selectedIndex !== null ? tanggalList[selectedIndex].name : "Tgl"}
           <HiChevronDown className="w-5 h-5" />
         </button>
       </div>
@@ -50,57 +151,21 @@ export default function DateDropdown() {
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
-          tabindex="-1"
         >
           <div className="py-1" role="none">
-            <button
-              className="inline-flex w-[94px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-0"
-            >
-              1
-            </button>
-            <button
-              className="inline-flex w-[94px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-1"
-            >
-              2
-            </button>
-            <button
-              className="inline-flex w-[94px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-2"
-            >
-              3
-            </button>
-            <button
-              className="inline-flex w-[94px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-3"
-            >
-              4
-            </button>
-            <button
-              className="inline-flex w-[94px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-4"
-            >
-              5
-            </button>
-            <button
-              className="inline-flex w-[94px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-5"
-            >
-              6
-            </button>
+            {tanggalList.map((item, index) => (
+              <button
+                className="inline-flex w-[94px] py-2 pl-3 text-sm text-Black-Normal"
+                role="menuitem"
+                key={item.value}
+                onClick={() => {
+                  setSelectedIndex(index);
+                  setShowTanggal(false);
+                }}
+              >
+                {item.name}
+              </button>
+            ))}
           </div>
         </div>
       )}

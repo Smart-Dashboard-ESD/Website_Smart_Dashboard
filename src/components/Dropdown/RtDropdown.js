@@ -1,32 +1,51 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
-
-let useClickOutside = (handler) => {
-  let domNode = useRef();
-
-  useEffect(() => {
-    let maybeHandler = (event) => {
-      if (!domNode.current.contains(event.target)) {
-        handler();
-      }
-    };
-
-    document.addEventListener("mousedown", maybeHandler);
-
-    return () => {
-      document.removeEventListener("mousedown", maybeHandler);
-    };
-  });
-
-  return domNode;
-};
 
 export default function RtDropdown() {
   const [showRt, setShowRt] = useState(false);
-
-  let domNode = useClickOutside(() => {
-    setShowRt(false);
-  });
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [rtList, setRtList] = useState([
+    {
+      name: "001",
+      value: "001",
+    },
+    {
+      name: "002",
+      value: "002",
+    },
+    {
+      name: "003",
+      value: "003",
+    },
+    {
+      name: "004",
+      value: "004",
+    },
+    {
+      name: "005",
+      value: "005",
+    },
+    {
+      name: "006",
+      value: "006",
+    },
+    {
+      name: "007",
+      value: "007",
+    },
+    {
+      name: "008",
+      value: "008",
+    },
+    {
+      name: "009",
+      value: "009",
+    },
+    {
+      name: "010",
+      value: "010",
+    },
+  ]);
 
   return (
     <div>
@@ -38,9 +57,8 @@ export default function RtDropdown() {
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
-          ref={domNode}
         >
-          RT
+          {selectedIndex !== null ? rtList[selectedIndex].name : "RT"}
           <HiChevronDown className="w-4 h-4" />
         </button>
       </div>
@@ -50,57 +68,21 @@ export default function RtDropdown() {
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
-          tabindex="-1"
         >
           <div className="py-1" role="none">
-            <button
-              className="inline-flex w-[126px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-0"
-            >
-              01
-            </button>
-            <button
-              className="inline-flex w-[126px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-1"
-            >
-              02
-            </button>
-            <button
-              className="inline-flex w-[126px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-2"
-            >
-              03
-            </button>
-            <button
-              className="inline-flex w-[126px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-3"
-            >
-              04
-            </button>
-            <button
-              className="inline-flex w-[126px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-4"
-            >
-              05
-            </button>
-            <button
-              className="inline-flex w-[126px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-5"
-            >
-              06
-            </button>
+            {rtList.map((item, index) => (
+              <button
+                className="inline-flex w-[126px] py-2 pl-3 text-sm text-Black-Normal"
+                role="menuitem"
+                key={item.value}
+                onClick={() => {
+                  setSelectedIndex(index);
+                  setShowRt(false);
+                }}
+              >
+                {item.name}
+              </button>
+            ))}
           </div>
         </div>
       )}

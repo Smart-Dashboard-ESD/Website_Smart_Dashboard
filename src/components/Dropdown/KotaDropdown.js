@@ -1,32 +1,47 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
-
-let useClickOutside = (handler) => {
-  let domNode = useRef();
-
-  useEffect(() => {
-    let maybeHandler = (event) => {
-      if (!domNode.current.contains(event.target)) {
-        handler();
-      }
-    };
-
-    document.addEventListener("mousedown", maybeHandler);
-
-    return () => {
-      document.removeEventListener("mousedown", maybeHandler);
-    };
-  });
-
-  return domNode;
-};
 
 export default function KotaDropdown() {
   const [showKota, setShowKota] = useState(false);
-
-  let domNode = useClickOutside(() => {
-    setShowKota(false);
-  });
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [kotaList, setKotaList] = useState([
+    {
+      name: "Jakarta Pusat",
+      value: "Jakarta Pusat",
+    },
+    {
+      name: "Jakarta Utara",
+      value: "Jakarta Utara",
+    },
+    {
+      name: "Jakarta Barat",
+      value: "Jakarta Barat",
+    },
+    {
+      name: "Jakarta Selatan",
+      value: "Jakarta Selatan",
+    },
+    {
+      name: "Jakarta Timur",
+      value: "Jakarta Timur",
+    },
+    {
+      name: "Bogor",
+      value: "Bogor",
+    },
+    {
+      name: "Depok",
+      value: "Depok",
+    },
+    {
+      name: "Tangerang",
+      value: "Tangerang",
+    },
+    {
+      name: "Bekasi",
+      value: "Bekasi",
+    },
+  ]);
 
   return (
     <div className="gap-x-2">
@@ -38,9 +53,8 @@ export default function KotaDropdown() {
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
-          ref={domNode}
         >
-          Bandung
+          {selectedIndex !== null ? kotaList[selectedIndex].name : "Kota"}
           <HiChevronDown className="w-5 h-5" />
         </button>
       </div>
@@ -50,57 +64,21 @@ export default function KotaDropdown() {
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
-          tabindex="-1"
         >
           <div className="py-1" role="none">
-            <button
-              className="inline-flex w-[251px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-0"
-            >
-              Bandung
-            </button>
-            <button
-              className="inline-flex w-[251px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-1"
-            >
-              Jakarta
-            </button>
-            <button
-              className="inline-flex w-[251px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-2"
-            >
-              Surabaya
-            </button>
-            <button
-              className="inline-flex w-[251px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-3"
-            >
-              Semarang
-            </button>
-            <button
-              className="inline-flex w-[251px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-4"
-            >
-              Yogyakarta
-            </button>
-            <button
-              className="inline-flex w-[251px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-5"
-            >
-              Padang
-            </button>
+            {kotaList.map((item, index) => (
+              <button
+                className="inline-flex w-[251px] py-2 pl-3 text-sm text-Black-Normal"
+                role="menuitem"
+                key={item.name}
+                onClick={() => {
+                  setSelectedIndex(index);
+                  setShowKota(false);
+                }}
+              >
+                {item.name}
+              </button>
+            ))}
           </div>
         </div>
       )}
