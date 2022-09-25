@@ -55,14 +55,14 @@ export default function LoginForm() {
             Remember Me
           </label>
         </div>
-        <Link to="/dashboard">
+        <Link to="/">
           <div className="w-[416px] h-[51px] bg-[#1B7FB5] text-white font-semibold rounded mt-[32px] ml-[32px] flex items-center justify-center">
             Sign In
           </div>
         </Link>
         <h2 className="mt-[32px] ml-[32px] text-[#9F9F9F] text-sm font-medium">
           Sudah punya akun?{" "}
-          <Link to="/register" className="text-Primary-Normal">
+          <Link to="/data-diri" className="text-Primary-Normal">
             Register
           </Link>
         </h2>
