@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BulanIni from "./BulanIni";
 import HariIni from "./HariIni";
 import MingguIni from "./MingguIni";
+import { HiChevronDown } from "react-icons/hi";
 
 export default function CobaDropdown() {
   const [showPemakaian, setShowPemakaian] = useState("HariIni");
@@ -27,9 +28,9 @@ export default function CobaDropdown() {
 
   return (
     <div>
-      <div className="absolute top-0 right-0 mt-5 mr-[50px]">
+      <div className="absolute flex top-0 right-0 mt-5 mr-[50px]">
         <select
-          className="form-select w-[223px] h-9 px-3 py-2 text-sm font-medium text-Info-NormalActive bg-white border outline-none border-Info-NormalActive rounded shadow-sm"
+          className="form-select appearance-none w-[223px] h-9 px-3 py-2 text-sm font-medium text-Info-NormalActive bg-white border outline-none border-Info-NormalActive rounded shadow-sm"
           value={showPemakaian}
           onChange={handlerOnChange}
         >
@@ -37,6 +38,7 @@ export default function CobaDropdown() {
           <option value="MingguIni">1 Minggu</option>
           <option value="BulanIni">1 Bulan</option>
         </select>
+        <HiChevronDown className="absolute right-[12px] w-5 h-5 mt-2 text-Info-Normal" />
       </div>
       {hariContentVisible && <HariIni />}
       {mingguContentVisible && <MingguIni />}
