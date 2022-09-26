@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
+import pana from "../assets/img/pana.png";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalFooter,
+  ModalBody,
+  useDisclosure,
+} from "@chakra-ui/react";
 
 export default function SignUpForm() {
   const [open, setopen] = useState(false);
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const toggle = () => {
     setopen(!open);
@@ -11,7 +22,7 @@ export default function SignUpForm() {
 
   return (
     <div>
-      <div className="w-[460px] h-[655px] z-50 absolute bg-[#F8F8F8] ml-[141px] mt-[190px] border rounded border-[#BFBFBF]">
+      <div className="w-[460px] h-[655px] z-40 absolute bg-[#F8F8F8] ml-[141px] mt-[190px] border rounded border-[#BFBFBF]">
         <div className="mt-8 ml-8">
           <h1 className="font-semibold text-[#444444] text-2xl">Sign Up</h1>
           <p className="text-[#939393] font-medium text-base leading-none mt-2">
@@ -66,13 +77,46 @@ export default function SignUpForm() {
             />
           </form>
         </div>
-        <Link to="/login">
-          <button className="w-[396px] h-[48px] bg-[#1B7FB5] rounded mt-8 ml-8">
-            <h1 className="text-base font-semibold text-center text-white">
-              Sign Up
-            </h1>
-          </button>
-        </Link>
+        <button
+          className="w-[396px] h-[48px] bg-[#1B7FB5] rounded mt-8 ml-8"
+          onClick={onOpen}
+        >
+          <h1 className="text-base font-semibold text-center text-white">
+            Sign Up
+          </h1>
+        </button>
+        <Modal
+          isOpen={isOpen}
+          onClose={onClose}
+          closeOnOverlayClick={false}
+          size={"lg"}
+        >
+          <ModalOverlay />
+          <ModalContent>
+            <ModalBody>
+              <div className="flex items-center justify-center mt-[30px]">
+                <img src={pana} className="" alt="pana" />
+              </div>
+              <h1 className="flex mt-[30px] items-center justify-center text-center font-semibold text-[25px] text-Black-Normal leading-none">
+                Selamat kamu berhasil terdaftar di
+                <br />
+                Automated Water Metered{" "}
+              </h1>
+              <p className="flex items-center justify-center mt-2 text-lg font-medium leading-none text-center text-Greyscale-NormalActive">
+                Kamu sudah terdaftar. Silahkan menikmati
+                <br /> layanan yang telah kami sediakan
+              </p>
+            </ModalBody>
+
+            <ModalFooter>
+              <Link to="/">
+                <div className="w-[450px] mt-[10px] mb-[30px] h-[56px] bg-[#1B7FB5] text-white rounded flex items-center justify-center font-medium text-lg">
+                  Go to Dashboard
+                </div>
+              </Link>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
         <h1 className="text-[#9F9F9F] mt-8 ml-8 text-sm font-medium">
           Anda sudah memiliki akun?{" "}
           <Link to="/login" className="text-Primary-Normal">
