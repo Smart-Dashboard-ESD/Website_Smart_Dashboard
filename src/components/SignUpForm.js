@@ -90,6 +90,8 @@ export default function SignUpForm() {
           onClose={onClose}
           closeOnOverlayClick={false}
           size={"lg"}
+          isCentered
+          motionPreset="scale"
         >
           <ModalOverlay />
           <ModalContent>
