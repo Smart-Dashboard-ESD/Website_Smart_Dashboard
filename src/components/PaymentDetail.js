@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function PaymentDetail() {
   return (
@@ -49,9 +50,11 @@ export default function PaymentDetail() {
             </span>
           </h1>
         </div>
-        <div className="w-[410px] h-[39px] bg-Primary-Normal mx-5 rounded mt-[50px] flex items-center justify-center text-white text-base font-medium">
-          Konfirmasi Pembayaran
-        </div>
+        <Link to="/">
+          <div className="w-[410px] h-[39px] bg-Primary-Normal mx-5 rounded mt-[50px] flex items-center justify-center text-white text-base font-medium">
+            Konfirmasi Pembayaran
+          </div>
+        </Link>
         <div className="w-[410px] h-[39px] mx-5 rounded mt-2 flex items-center justify-center text-Primary-Normal text-base font-medium">
           Lihat Jam Operasional
         </div>
