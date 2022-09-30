@@ -1,23 +1,50 @@
 import React, { useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
-export default function Dropdown() {
+// let useClickOutside = (handler) => {
+//   let domNode = useRef();
+
+//   useEffect(() => {
+//     let maybeHandler = (event) => {
+//       if (!domNode.current.contains(event.target)) {
+//         handler();
+//       }
+//     };
+
+//     document.addEventListener("mousedown", maybeHandler);
+
+//     return () => {
+//       document.removeEventListener("mousedown", maybeHandler);
+//     };
+//   });
+
+//   return domNode;
+// };
+
+export default function Dropdown({ selected, setSelected }) {
   const [showOptions, setShowOptions] = useState(false);
+  const options = ["Hari Ini", "1 Minggu", "1 Bulan"];
+
+  // let domNode = useClickOutside(() => {
+  //   setShowOptions(false);
+  // });
+
   return (
     <div className="absolute top-0 right-0 mt-5 mr-[50px]">
       <div className="relative inline-block text-left">
         <div>
-          <button
+          <div
             onClick={() => setShowOptions(!showOptions)}
             type="button"
             className="inline-flex justify-between w-[223px] h-9 px-3 py-2 text-sm font-medium text-Info-NormalActive bg-white border border-Info-NormalActive rounded shadow-sm"
             id="menu-button"
             aria-expanded="true"
             aria-haspopup="true"
+            // ref={domNode}
           >
-            Hari ini
+            {selected}
             <HiChevronDown className="w-5 h-5 ml-2 -mr-1 text-Info-Normal" />
-          </button>
+          </div>
         </div>
         {showOptions && (
           <div
@@ -25,37 +52,20 @@ export default function Dropdown() {
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="menu-button"
-            tabindex="-1"
           >
-            <div className="py-1" role="none">
-              <button
-                href="#"
+            {options.map((option, index) => (
+              <div
                 className="inline-flex w-56 py-2 pl-3 text-sm text-Info-NormalActive"
                 role="menuitem"
-                tabindex="-1"
-                id="menu-item-0"
+                key={index}
+                onClick={(e) => {
+                  setSelected(option);
+                  setShowOptions(false);
+                }}
               >
-                Hari ini
-              </button>
-              <button
-                href="#"
-                className="inline-flex w-56 py-2 pl-3 text-sm text-Info-NormalActive"
-                role="menuitem"
-                tabindex="-1"
-                id="menu-item-1"
-              >
-                1 Minggu
-              </button>
-              <button
-                href="#"
-                className="inline-flex w-56 py-2 pl-3 text-sm text-Info-NormalActive"
-                role="menuitem"
-                tabindex="-1"
-                id="menu-item-2"
-              >
-                1 Bulan
-              </button>
-            </div>
+                {option}
+              </div>
+            ))}
           </div>
         )}
       </div>

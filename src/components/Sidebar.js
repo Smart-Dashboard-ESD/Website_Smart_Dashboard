@@ -20,10 +20,9 @@ export default function Sidebar() {
           </div>
         </div>
       </Link>
-      <div className="w-16 lg:w-[250px] mx-5 mt-14 border-b border-Neutral-LightActive">
+      <div className="w-16 lg:w-[250px] mx-5 mt-14 border-b border-[#BBBBBB]">
         <Link
           to="/"
-
           className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-Primary-Light active:bg-Primary-NormalActive ${
             location.pathname === "/" &&
             "bg-Primary-NormalActive text-Primary-Light"
@@ -39,7 +38,6 @@ export default function Sidebar() {
       <div className="w-16 lg:w-[250px] mx-auto mt-5 lg:mt-1">
         <Link
           to="/customer-care"
-
           className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-Primary-Light active:bg-Primary-NormalActive ${
             location.pathname === "/customer-care" &&
             "bg-Primary-NormalActive text-Primary-Light"
@@ -49,7 +47,7 @@ export default function Sidebar() {
           <span className="hidden text-base lg:block">Pusat Bantuan</span>
         </Link>
       </div>
-      <div className="w-16 lg:w-[260px] mx-auto mt-[380px] border-t border-Neutral-LightActive">
+      <div className="w-16 lg:w-[260px] mx-auto mt-[380px] border-t border-[#BBBBBB]">
         <Link to="/profile">
           <div className="mt-6">
             <img

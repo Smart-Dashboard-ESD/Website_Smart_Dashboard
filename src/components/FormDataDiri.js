@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import GenderDropdown from "./Dropdown/GenderDropdown";
 import KotaDropdown from "./Dropdown/KotaDropdown";
 import ProvinsiDropdown from "./Dropdown/ProvinsiDropdown";
@@ -84,9 +85,11 @@ export default function FormDataDiri() {
         <h2 className="text-sm font-medium text-Greyscale-Normal">
           *Form wajib terisi penuh
         </h2>
-        <button className="w-[158px] h-[39px] bg-Primary-Normal rounded text-base font-medium text-white ml-[264px]">
-          Save & Continue
-        </button>
+        <Link to="/register">
+          <button className="w-[158px] h-[39px] bg-Primary-Normal rounded text-base font-medium text-white ml-[264px]">
+            Save & Continue
+          </button>
+        </Link>
       </div>
     </div>
   );
