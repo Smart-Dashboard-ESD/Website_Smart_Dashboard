@@ -1,46 +1,45 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
-
-let useClickOutside = (handler) => {
-  let domNode = useRef();
-
-  useEffect(() => {
-    let maybeHandler = (event) => {
-      if (!domNode.current.contains(event.target)) {
-        handler();
-      }
-    };
-
-    document.addEventListener("mousedown", maybeHandler);
-
-    return () => {
-      document.removeEventListener("mousedown", maybeHandler);
-    };
-  });
-
-  return domNode;
-};
 
 export default function GenderDropdown() {
   const [showGender, setShowGender] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
-  let domNode = useClickOutside(() => {
-    setShowGender(false);
-  });
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (event.target.closest(".dropdowngender") === null) {
+        setShowGender(false);
+      }
+    }
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
+  const [genderList] = useState([
+    {
+      name: "Laki-laki",
+      value: "Laki-laki",
+    },
+    {
+      name: "Perempuan",
+      value: "Perempuan",
+    },
+  ]);
 
   return (
     <div className="mt-2 gap-x-2">
       <div>
         <button
-          className="w-[512px] h-[48px] bg-white text-sm rounded border text-Greyscale-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
+          className="dropdowngender w-[512px] h-[48px] bg-white text-sm rounded border text-Black-Normal placeholder:text-Greyscale-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
           onClick={() => setShowGender(!showGender)}
           type="button"
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
-          ref={domNode}
         >
-          Laki - Laki
+          {selectedIndex !== null
+            ? genderList[selectedIndex].name
+            : "Pilih jenis kelamin"}
           <HiChevronDown className="w-5 h-5" />
         </button>
       </div>
@@ -50,25 +49,21 @@ export default function GenderDropdown() {
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
-          tabindex="-1"
         >
           <div className="py-1" role="none">
-            <button
-              className="inline-flex w-[512px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-0"
-            >
-              Laki - Laki
-            </button>
-            <button
-              className="inline-flex w-[512px] py-2 pl-3 text-sm text-Black-Normal"
-              role="menuitem"
-              tabindex="-1"
-              id="menu-item-0"
-            >
-              Perempuan
-            </button>
+            {genderList.map((item, index) => (
+              <button
+                className="inline-flex w-[512px] py-2 pl-3 text-sm text-Black-Normal"
+                role="menuitem"
+                key={item.value}
+                onClick={() => {
+                  setSelectedIndex(index);
+                  setShowGender(false);
+                }}
+              >
+                {item.name}
+              </button>
+            ))}
           </div>
         </div>
       )}
