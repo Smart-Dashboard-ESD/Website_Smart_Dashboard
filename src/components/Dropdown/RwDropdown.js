@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
 export default function RwDropdown() {
-  const [showRt, setShowRt] = useState(false);
+  const [showRw, setShowRw] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [rwList, setRwList] = useState([
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (event.target.closest(".dropdownrw") === null) {
+        setShowRw(false);
+      }
+    }
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+  const [rwList] = useState([
     {
       name: "001",
       value: "001",
@@ -51,8 +61,8 @@ export default function RwDropdown() {
     <div>
       <div>
         <button
-          className="w-[126px] h-[48px] bg-white text-sm rounded border text-Greyscale-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
-          onClick={() => setShowRt(!showRt)}
+          className="dropdownrw w-[126px] h-[48px] bg-white text-sm rounded border text-Black-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
+          onClick={() => setShowRw(!showRw)}
           type="button"
           id="menu-button"
           aria-expanded="true"
@@ -62,7 +72,7 @@ export default function RwDropdown() {
           <HiChevronDown className="w-4 h-4" />
         </button>
       </div>
-      {showRt && (
+      {showRw && (
         <div
           className="absolute overflow-y-auto h-[160px] z-10 w-[126px] mt-2 bg-white rounded shadow-lg ring-1 ring-Info-NormalActive ring-opacity-5 focus:outline-none"
           role="menu"
@@ -77,7 +87,7 @@ export default function RwDropdown() {
                 key={item.value}
                 onClick={() => {
                   setSelectedIndex(index);
-                  setShowRt(false);
+                  setShowRw(false);
                 }}
               >
                 {item.name}

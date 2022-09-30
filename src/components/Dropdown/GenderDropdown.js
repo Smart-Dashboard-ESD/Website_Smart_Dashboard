@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
 export default function GenderDropdown() {
   const [showGender, setShowGender] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [genderList, setGenderList] = useState([
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (event.target.closest(".dropdowngender") === null) {
+        setShowGender(false);
+      }
+    }
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
+  const [genderList] = useState([
     {
       name: "Laki-laki",
       value: "Laki-laki",
@@ -19,7 +30,7 @@ export default function GenderDropdown() {
     <div className="mt-2 gap-x-2">
       <div>
         <button
-          className="w-[512px] h-[48px] bg-white text-sm rounded border text-Greyscale-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
+          className="dropdowngender w-[512px] h-[48px] bg-white text-sm rounded border text-Black-Normal placeholder:text-Greyscale-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
           onClick={() => setShowGender(!showGender)}
           type="button"
           id="menu-button"

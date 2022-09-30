@@ -1,12 +1,10 @@
 import React from "react";
-import DateDropdown from "./Dropdown/DateDropdown";
 import GenderDropdown from "./Dropdown/GenderDropdown";
 import KotaDropdown from "./Dropdown/KotaDropdown";
-import MonthDropdown from "./Dropdown/MonthDropdown";
 import ProvinsiDropdown from "./Dropdown/ProvinsiDropdown";
 import RtDropdown from "./Dropdown/RtDropdown";
 import RwDropdown from "./Dropdown/RwDropdown";
-import YearDropdown from "./Dropdown/YearDropdown";
+import { Input } from "@chakra-ui/react";
 
 export default function FormDataDiri() {
   return (
@@ -18,8 +16,9 @@ export default function FormDataDiri() {
         NIK
       </h2>
       <input
-        className="w-[512px] h-[48px] bg-white mt-[10px] rounded text-[#8F8F8F] border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
+        className="w-[512px] h-[48px] bg-white mt-[10px] rounded text-Black-Normal placeholder:text-[#8F8F8F] border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
         placeholder="Masukkan NIK anda"
+        type="number"
       />
       <h1 className="text-lg font-semibold text-Primary-Normal mt-[30px]">
         Data Diri :
@@ -28,7 +27,7 @@ export default function FormDataDiri() {
         Nama Lengkap
       </h2>
       <input
-        className="w-[512px] h-[48px] bg-white mt-[10px] rounded text-[#8F8F8F] border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
+        className="w-[512px] h-[48px] bg-white mt-[10px] rounded text-Black-Normal placeholder:text-[#8F8F8F] border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
         placeholder="Masukkan username anda"
       />
       <h2 className="text-base font-semibold text-Black-Normal mt-[15px]">
@@ -36,13 +35,17 @@ export default function FormDataDiri() {
       </h2>
       <div className="flex mt-[10px]">
         <input
-          className="w-[146px] h-[48px] mr-[20px] bg-white rounded text-[#8F8F8F] border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
+          className="w-[146px] h-[48px] mr-[20px] bg-white rounded placeholder:text-[#8F8F8F] text-Black-Normal border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
           placeholder="Bandung"
         />
-        <span className="flex gap-x-2">
-          <DateDropdown />
-          <MonthDropdown />
-          <YearDropdown />
+        <span className="">
+          <Input
+            placeholder="Pilih tanggal lahir"
+            width={346}
+            height={48}
+            type="date"
+            className="text-base border rounded border-[#939393] placeholder:text-[#8F8F8F] px-4"
+          />
         </span>
       </div>
       <h2 className="text-base font-semibold text-Black-Normal mt-[15px]">
@@ -64,7 +67,7 @@ export default function FormDataDiri() {
       </h2>
       <div className="flex mt-[10px] gap-x-2">
         <input
-          className="w-[244px] h-[48px] bg-white rounded text-[#8F8F8F] border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
+          className="w-[244px] h-[48px] bg-white rounded text-Black-Normal placeholder:text-[#8F8F8F] border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
           placeholder="Bojongsoang"
         />
         <RtDropdown />
@@ -74,7 +77,7 @@ export default function FormDataDiri() {
         Detail Alamat
       </h2>
       <input
-        className="w-[512px] h-[48px] mt-2 bg-white rounded text-[#8F8F8F] border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
+        className="w-[512px] h-[48px] mt-2 bg-white rounded text-Black-Normal placeholder:text-[#8F8F8F] border border-[#939393] pl-4 placeholder:text-sm placeholder:font-medium outline-Primary-NormalActive"
         placeholder="Masukkan nama jalan dan no rumah anda"
       />
       <div className="flex mt-[40px] items-center">

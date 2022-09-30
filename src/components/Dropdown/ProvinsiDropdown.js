@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
 export default function ProvinsiDropdown() {
   const [showProvinsi, setShowProvinsi] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [provinsiList, setProvinsiList] = useState([
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (event.target.closest(".dropdownprovinsi") === null) {
+        setShowProvinsi(false);
+      }
+    }
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+  const [provinsiList] = useState([
     {
       name: "Aceh",
       value: "Aceh",
@@ -71,7 +81,7 @@ export default function ProvinsiDropdown() {
     <div className="gap-x-2">
       <div>
         <button
-          className="w-[252px] h-[48px] bg-white text-sm rounded border text-Greyscale-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
+          className="dropdownprovinsi w-[252px] h-[48px] bg-white text-sm rounded border text-Black-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
           onClick={() => setShowProvinsi(!showProvinsi)}
           type="button"
           id="menu-button"

@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
 export default function RtDropdown() {
   const [showRt, setShowRt] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [rtList, setRtList] = useState([
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (event.target.closest(".dropdownrt") === null) {
+        setShowRt(false);
+      }
+    }
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+  const [rtList] = useState([
     {
       name: "001",
       value: "001",
@@ -51,7 +60,7 @@ export default function RtDropdown() {
     <div>
       <div>
         <button
-          className="w-[126px] h-[48px] bg-white text-sm rounded border text-Greyscale-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
+          className="dropdownrt w-[126px] h-[48px] bg-white text-sm rounded border text-Black-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
           onClick={() => setShowRt(!showRt)}
           type="button"
           id="menu-button"

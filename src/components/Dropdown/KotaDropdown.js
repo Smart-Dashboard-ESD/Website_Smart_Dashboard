@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
 export default function KotaDropdown() {
   const [showKota, setShowKota] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [kotaList, setKotaList] = useState([
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (event.target.closest(".dropdownkota") === null) {
+        setShowKota(false);
+      }
+    }
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+  const [kotaList] = useState([
     {
       name: "Jakarta Pusat",
       value: "Jakarta Pusat",
@@ -47,7 +56,7 @@ export default function KotaDropdown() {
     <div className="gap-x-2">
       <div>
         <button
-          className="w-[251px] h-[48px] bg-white text-sm rounded border text-Greyscale-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
+          className="dropdownkota w-[251px] h-[48px] bg-white text-sm rounded border text-Black-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
           onClick={() => setShowKota(!showKota)}
           type="button"
           id="menu-button"
