@@ -43,9 +43,13 @@ export default function FormDataDiri() {
           <Input
             placeholder="Pilih tanggal lahir"
             width={346}
-            height={48}
+            height="48px"
             type="date"
-            className="text-base border rounded border-[#939393] placeholder:text-[#8F8F8F] px-4"
+            bg="white"
+            border="1px solid"
+            borderColor="#939393"
+            borderRadius="4px"
+            className="text-base border border-[#939393] bg-white placeholder:text-[#8F8F8F] px-4"
           />
         </span>
       </div>
