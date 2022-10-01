@@ -5,12 +5,17 @@ export default function Tickets() {
     <div className="mt-[30px] w-[378px] h-[516px]">
       <h1 className="text-lg font-semibold text-Black-Normal">Tickets</h1>
       <div className="flex justify-between">
-        <h1 className="text-base font-semibold border-b-2 text-Primary-Normal border-Primary-Normal">
-          Pending Tickets
-        </h1>
-        <h1 className="text-base font-semibold text-Greyscale-Normal">
-          Solved Tickets
-        </h1>
+        <span>
+          <h1 className="text-base font-semibold text-Primary-Normal">
+            Pending Tickets
+          </h1>
+          <div className="w-[85px] border-b-2 border-Primary-Normal mx-auto mt-2"></div>
+        </span>
+        <span>
+          <h1 className="text-base font-semibold text-Greyscale-Normal">
+            Solved Tickets
+          </h1>
+        </span>
       </div>
       <div className="w-[378px] h-[135px] bg-white rounded mt-[13px]">
         <div className="flex justify-between items-center ml-[15px] pt-[15px] mr-5">
