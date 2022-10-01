@@ -1,7 +1,7 @@
 import React from "react";
-import MetodeBayar from "../components/MetodeBayar";
-import PaymentDetail from "../components/PaymentDetail";
-import SidebarAlt from "../components/SidebarAlt";
+import MetodeBayar from "../../components/MetodeBayar";
+import PaymentDetail from "../../components/PaymentDetail";
+import SidebarAlt from "../../components/SidebarAlt";
 
 export default function Pembayaran() {
   return (

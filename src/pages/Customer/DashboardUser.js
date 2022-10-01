@@ -1,9 +1,9 @@
 import React from "react";
-import BillingDate from "../components/BillingDate";
-import DoughnutChartSection from "../components/DoughnutChartSection";
-import History from "../components/History";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import BillingDate from "../../components/BillingDate";
+import DoughnutChartSection from "../../components/DoughnutChartSection";
+import History from "../../components/History";
+import Header from "../../components/Header";
+import Sidebar from "../../components/Sidebar";
 
 export default function DashboardUser() {
   return (

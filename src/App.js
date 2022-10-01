@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import Sidebar from "./components/Sidebar";
-import CustomerCare from "./pages/CustomerCare";
-import DashboardUser from "./pages/DashboardUser";
+import CustomerCare from "./pages/Customer/CustomerCare";
+import DashboardUser from "./pages/Customer/DashboardUser";
 import Tagihan from "./pages/Tagihan";
 // import { useStateContext } from "./context/ContextProvider";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import DataDiri from "./pages/DataDiri";
-import Pembayaran from "./pages/Pembayaran";
+import Pembayaran from "./pages/Customer/Pembayaran";
 import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
