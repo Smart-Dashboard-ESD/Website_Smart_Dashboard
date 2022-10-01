@@ -1,6 +1,6 @@
 import React from "react";
 
-import CobaDropdown from "./CobaDropdown";
+import Dropdown from "./Dropdown/Dropdown";
 
 export default function DoughnutChartSection() {
   return (
@@ -8,7 +8,7 @@ export default function DoughnutChartSection() {
       <h1 className="pt-[28px] ml-5 font-medium text-xl text-Neutral-Normal">
         Distribusi Konsumsi
       </h1>
-      <CobaDropdown />
+      <Dropdown />
       <div className="absolute border-t bottom-0 border-Greyscale-Normal w-[552px] h-[63px] mx-[25px] flex justify-between items-center">
         <h1 className="text-sm font-medium text-[#242424]">
           lorem ipsum dolor sit amet

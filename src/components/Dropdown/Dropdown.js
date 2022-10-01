@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import BulanIni from "./BulanIni";
-import HariIni from "./HariIni";
-import MingguIni from "./MingguIni";
+import BulanIni from "../BulanIni";
+import HariIni from "../HariIni";
+import MingguIni from "../MingguIni";
 import { HiChevronDown } from "react-icons/hi";
 
 export default function CobaDropdown() {
