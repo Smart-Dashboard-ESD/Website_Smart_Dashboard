@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import DataDiri from "./pages/DataDiri";
 import Pembayaran from "./pages/Customer/Pembayaran";
 import { ChakraProvider } from "@chakra-ui/react";
+import Page404 from "./pages/Page404";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/data-diri" element={<DataDiri />} />
             <Route path="/pembayaran" element={<Pembayaran />} />
+            <Route path="*" element={<Page404 />} />
           </Routes>
         </BrowserRouter>
       </ChakraProvider>
