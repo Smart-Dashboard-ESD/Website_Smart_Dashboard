@@ -1,8 +1,8 @@
 import React from "react";
 import Petugas from "../../components/Petugas";
 import Sidebar from "../../components/Sidebar";
-import TicketForm from "../../components/TicketForm";
-import Tickets from "../../components/Tickets";
+import TicketForm from "../../components/Tickets/TicketForm";
+import Tickets from "../../components/Tickets/Tickets";
 
 export default function CustomerCare() {
   return (
