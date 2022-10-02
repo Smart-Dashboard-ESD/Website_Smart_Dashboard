@@ -10,18 +10,10 @@ export default function PaginationChart() {
 
   useEffect(() => {
     currentPage === 1
-      ? setPageSatuContentVisible(true) &&
-        document
-          .getElementById("prev")
-          .classList.add("text-Black-LightActive disabled") &&
-        document.getElementById("prev").classList.remove("text-Primary-Normal")
+      ? setPageSatuContentVisible(true)
       : setPageSatuContentVisible(false);
     currentPage === 2
-      ? setPageDuaContentVisible(true) &&
-        document
-          .getElementById("next")
-          .classList.add("text-Black-LightActive disabled") &&
-        document.getElementById("next").classList.remove("text-Primary-Normal")
+      ? setPageDuaContentVisible(true)
       : setPageDuaContentVisible(false);
   }, [currentPage]);
 
@@ -38,7 +30,11 @@ export default function PaginationChart() {
           <HiChevronLeft
             id="prev"
             values="1"
-            className="w-5 h-5 text-Primary-Normal"
+            className={`w-5 h-5 ${
+              pageSatuContentVisible
+                ? "text-Black-LightActive"
+                : "text-Primary-Normal"
+            } `}
           />
         </button>
         <button
@@ -49,7 +45,11 @@ export default function PaginationChart() {
           <HiChevronRight
             id="next"
             values="2"
-            className="w-5 h-5 text-Primary-Normal"
+            className={`w-5 h-5 ${
+              pageDuaContentVisible
+                ? "text-Black-LightActive"
+                : "text-Primary-Normal"
+            } `}
           />
         </button>
       </div>
