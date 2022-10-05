@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/img/logoptmulti.png";
+import logo from "../../assets/img/logoptmulti.png";
 import { Link } from "react-router-dom";
 
 export default function SidebarAlt() {

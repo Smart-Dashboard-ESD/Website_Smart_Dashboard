@@ -10,10 +10,11 @@ import DataDiri from "./pages/DataDiri";
 import Pembayaran from "./pages/Customer/Pembayaran";
 import { ChakraProvider } from "@chakra-ui/react";
 import Page404 from "./pages/Page404";
+import DashboardAdmin from "./pages/Admin/DashboardAdmin";
 
 function App() {
   return (
-    <div className="w-screen h-screen App">
+    <div className="w-screen h-[1024px] App">
       <ChakraProvider>
         <BrowserRouter>
           <Routes>
@@ -25,6 +26,7 @@ function App() {
             <Route path="/data-diri" element={<DataDiri />} />
             <Route path="/pembayaran" element={<Pembayaran />} />
             <Route path="*" element={<Page404 />} />
+            <Route path="/dashboard-admin" element={<DashboardAdmin />} />
           </Routes>
         </BrowserRouter>
       </ChakraProvider>

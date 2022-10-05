@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../assets/img/logoptmulti.png";
-import avatar from "../assets/img/Avatar.png";
+import logo from "../../assets/img/logoptmulti.png";
+import avatar from "../../assets/img/Avatar.png";
 import { Link, useLocation } from "react-router-dom";
 import { HiOutlineChartSquareBar, HiOutlineUserGroup } from "react-icons/hi";
 
