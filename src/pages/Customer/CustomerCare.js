@@ -1,12 +1,12 @@
 import React from "react";
 import Petugas from "../../components/Petugas";
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import TicketForm from "../../components/Tickets/TicketForm";
 import Tickets from "../../components/Tickets/Tickets";
 
 export default function CustomerCare() {
   return (
-    <div className="flex bg-[#F3F3F3]">
+    <div className="flex h-[1024px] bg-[#F3F3F3]">
       <Sidebar />
       <div className="flex">
         <div className="ml-5 mt-[30px]">

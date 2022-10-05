@@ -1,10 +1,10 @@
 import React from "react";
 import FormDataDiri from "../components/FormDataDiri";
-import SidebarAlt from "../components/SidebarAlt";
+import SidebarAlt from "../components/Sidebar/SidebarAlt";
 
 export default function DataDiri() {
   return (
-    <div className="w-screen h-screen flex bg-[#F3F3F3]">
+    <div className="w-screen h-[1024px] flex bg-[#F3F3F3]">
       <SidebarAlt />
       <div>
         <div className="absolute top-0 right-[202px] flex items-center mt-8">

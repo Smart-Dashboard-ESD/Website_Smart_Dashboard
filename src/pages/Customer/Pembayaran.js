@@ -1,11 +1,11 @@
 import React from "react";
 import MetodeBayar from "../../components/MetodeBayar";
 import PaymentDetail from "../../components/PaymentDetail";
-import SidebarAlt from "../../components/SidebarAlt";
+import SidebarAlt from "../../components/Sidebar/SidebarAlt";
 
 export default function Pembayaran() {
   return (
-    <div className="flex w-screen h-screen bg-[#F3F3F3]">
+    <div className="flex w-screen h-[1024px] bg-[#F3F3F3]">
       <SidebarAlt />
       <div>
         <div className="mt-[75px] ml-[50px]">
