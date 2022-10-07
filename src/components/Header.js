@@ -6,10 +6,12 @@ import Notification from "./Notification";
 
 export default function Header() {
   return (
-    <div className="w-[1150px] h-10 lg:h-[51px] flex justify-between mb-[30px] mt-[30px]">
+    <div className="default:w-[1150px] 5xl:w-[1630px] h-10 xl:h-8 4xl:w-[1390px] xl:w-[990px] 2xl:w-[1076px] 3xl:w-[1246px] flex justify-between xl:mb-[25px] xl:mt-[15px] default:mb-[30px] default:mt-[30px]">
       <div className="ml-5">
-        <h1 className="text-xl font-semibold text-[#444444]">Dashboard</h1>
-        <p className="text-[#848484] text-base font-medium">
+        <h1 className="default:text-xl xl:text-[15px] font-semibold text-[#444444]">
+          Dashboard
+        </h1>
+        <p className="text-[#848484] xl:text-sm default:text-base font-medium">
           Selamat Datang, Bima !
         </p>
       </div>

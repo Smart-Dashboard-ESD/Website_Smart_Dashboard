@@ -6,7 +6,7 @@ import Tickets from "../../components/Tickets/Tickets";
 
 export default function CustomerCare() {
   return (
-    <div className="flex h-[1024px] bg-[#F3F3F3]">
+    <div className="flex h-screen bg-[#F3F3F3]">
       <Sidebar />
       <div className="flex">
         <div className="ml-5 mt-[30px]">

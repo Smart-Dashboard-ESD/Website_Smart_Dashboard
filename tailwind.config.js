@@ -8,6 +8,11 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1366px",
+      default: "1440px",
+      "3xl": "1536px",
+      "4xl": "1680px",
+      "5xl": "1920px",
+      "6xl": "2560px",
     },
     extend: {},
     fontFamily: {

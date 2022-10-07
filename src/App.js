@@ -14,7 +14,7 @@ import DashboardAdmin from "./pages/Admin/DashboardAdmin";
 
 function App() {
   return (
-    <div className="w-screen h-[1024px] App">
+    <div className="w-screen h-screen App">
       <ChakraProvider>
         <BrowserRouter>
           <Routes>
