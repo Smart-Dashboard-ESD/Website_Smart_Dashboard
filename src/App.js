@@ -11,6 +11,7 @@ import Pembayaran from "./pages/Customer/Pembayaran";
 import { ChakraProvider } from "@chakra-ui/react";
 import Page404 from "./pages/Page404";
 import DashboardAdmin from "./pages/Admin/DashboardAdmin";
+import UserPassword from "./pages/UserPassword";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/pembayaran" element={<Pembayaran />} />
             <Route path="*" element={<Page404 />} />
             <Route path="/dashboard-admin" element={<DashboardAdmin />} />
+            <Route path="/username" element={<UserPassword />} />
           </Routes>
         </BrowserRouter>
       </ChakraProvider>

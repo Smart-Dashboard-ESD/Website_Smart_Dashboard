@@ -89,7 +89,7 @@ export default function FormDataDiri() {
         <h2 className="text-sm font-medium text-Greyscale-Normal">
           *Form wajib terisi penuh
         </h2>
-        <Link to="/register">
+        <Link to="/username">
           <button className="w-[158px] h-[39px] bg-Primary-Normal rounded text-base font-medium text-white ml-[264px]">
             Save & Continue
           </button>
