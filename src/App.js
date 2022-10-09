@@ -12,6 +12,13 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Page404 from "./pages/Page404";
 import DashboardAdmin from "./pages/Admin/DashboardAdmin";
 import UserPassword from "./pages/UserPassword";
+import DataAkunCustomer from "./pages/Admin/DataAkunCustomer";
+import DataAkunBilling from "./pages/Admin/DataAkunBilling";
+import DataAkunAdmin from "./pages/Admin/DataAkunAdmin";
+import DataKeluhan from "./pages/Admin/DataKeluhan";
+import DashboardBilling from "./pages/Billing/DashboardBilling";
+import TransaksiPelanggan from "./pages/Billing/TransaksiPelanggan";
+import HargaAir from "./pages/Billing/HargaAir";
 
 function App() {
   return (
@@ -29,6 +36,13 @@ function App() {
             <Route path="*" element={<Page404 />} />
             <Route path="/dashboard-admin" element={<DashboardAdmin />} />
             <Route path="/username" element={<UserPassword />} />
+            <Route path="/data-akun-cust" element={<DataAkunCustomer />} />
+            <Route path="/data-akun-billing" element={<DataAkunBilling />} />
+            <Route path="/data-akun-admin" element={<DataAkunAdmin />} />
+            <Route path="/data-keluhan" element={<DataKeluhan />} />
+            <Route path="/dashboard-billing" element={<DashboardBilling />} />
+            <Route path="/transaksi" element={<TransaksiPelanggan />} />
+            <Route path="/harga-air" element={<HargaAir />} />
           </Routes>
         </BrowserRouter>
       </ChakraProvider>
