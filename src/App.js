@@ -20,6 +20,7 @@ import DashboardBilling from "./pages/Billing/DashboardBilling";
 import TransaksiPelanggan from "./pages/Billing/TransaksiPelanggan";
 import HargaAir from "./pages/Billing/HargaAir";
 import RegisterDevice from "./pages/Customer/RegisterDevice";
+import CreateDevice from "./pages/Admin/CreateDevice";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path="/transaksi" element={<TransaksiPelanggan />} />
             <Route path="/harga-air" element={<HargaAir />} />
             <Route path="/register-device" element={<RegisterDevice />} />
+            <Route path="/create-device" element={<CreateDevice />} />
           </Routes>
         </BrowserRouter>
       </ChakraProvider>
