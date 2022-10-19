@@ -7,6 +7,7 @@ import {
   HiOutlineUserGroup,
   HiOutlineTicket,
   HiOutlineUser,
+  HiOutlineCog,
 } from "react-icons/hi";
 
 export default function SidebarAdmin() {
@@ -73,13 +74,23 @@ export default function SidebarAdmin() {
         </Link>
         <Link
           to="/data-keluhan"
-          className={`flex flex-row items-center justify-center h-10 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-Primary-Light active:bg-Primary-NormalActive ${
+          className={`flex flex-row items-center justify-center mb-5 h-10 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-Primary-Light active:bg-Primary-NormalActive ${
             location.pathname === "/data-keluhan" &&
             "bg-Primary-NormalActive text-Primary-Light"
           }`}
         >
           <HiOutlineUser className="w-6 h-6 lg:ml-3 lg:mr-2" />
           <span className="hidden text-base lg:block">Data Keluhan</span>
+        </Link>
+        <Link
+          to="/create-device"
+          className={`flex flex-row items-center justify-center h-10 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-Primary-Light active:bg-Primary-NormalActive ${
+            location.pathname === "/create-device" &&
+            "bg-Primary-NormalActive text-Primary-Light"
+          }`}
+        >
+          <HiOutlineCog className="w-6 h-6 lg:ml-3 lg:mr-2" />
+          <span className="hidden text-base lg:block">Create Device</span>
         </Link>
       </div>
       <div className="w-16 lg:w-[260px] mx-auto default:mt-[380px] xl:mt-[250px] border-t border-[#BBBBBB]">
