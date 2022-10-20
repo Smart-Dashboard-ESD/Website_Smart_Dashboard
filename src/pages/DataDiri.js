@@ -4,7 +4,7 @@ import SidebarAlt from "../components/Sidebar/SidebarAlt";
 
 export default function DataDiri() {
   return (
-    <div className="w-screen h-[1024px] flex bg-[#F3F3F3]">
+    <div className="w-screen default:h-screen 4xl:h-[1080px] flex bg-[#F3F3F3]">
       <SidebarAlt />
       <div>
         <div className="absolute top-0 right-[202px] flex items-center mt-8">
@@ -19,6 +19,15 @@ export default function DataDiri() {
           <div className="w-[40px] border-b-2 border-Greyscale-Normal border-dotted border-slate-400 m-4"></div>
           <div className="text-white rounded-full flex items-center justify-center bg-Greyscale-Normal w-[35px] h-[35px] ">
             2
+          </div>
+          <div className="">
+            <h1 className="ml-2 text-base font-semibold text-Greyscale-Normal">
+              Buat Username
+            </h1>
+          </div>
+          <div className="w-[40px] border-b-2 border-Greyscale-Normal border-dotted border-slate-400 m-4"></div>
+          <div className="text-white rounded-full flex items-center justify-center bg-Greyscale-Normal w-[35px] h-[35px] ">
+            3
           </div>
           <div className="">
             <h1 className="ml-2 text-base font-semibold text-Greyscale-Normal">

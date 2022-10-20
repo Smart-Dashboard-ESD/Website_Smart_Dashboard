@@ -4,9 +4,13 @@ import PageNotFound from "../assets/img/404Error.png";
 
 export default function Page404() {
   return (
-    <div className="">
-      <div className="flex items-center justify-center mt-[60px]">
-        <img src={PageNotFound} alt="404" />
+    <div className="w-screen h-screen">
+      <div className="flex items-center justify-center pt-[60px]">
+        <img
+          src={PageNotFound}
+          alt="404"
+          className="default:w-[685px] default:h-[572px]"
+        />
       </div>
       <div className="flex flex-col justify-center font-semibold text-[31px] text-Black-Normal text-center mt-[30px]">
         <h1 className="">

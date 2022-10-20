@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
-export default function RtDropdown() {
+export default function RtDropdown({ selected }) {
   const [showRt, setShowRt] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
   useEffect(() => {
@@ -87,6 +87,7 @@ export default function RtDropdown() {
                 onClick={() => {
                   setSelectedIndex(index);
                   setShowRt(false);
+                  selected(item.value);
                 }}
               >
                 {item.name}

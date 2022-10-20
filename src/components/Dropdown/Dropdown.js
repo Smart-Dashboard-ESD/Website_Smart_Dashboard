@@ -30,7 +30,7 @@ export default function CobaDropdown() {
     <div>
       <div className="absolute flex top-0 right-0 mt-5 mr-[50px]">
         <select
-          className="form-select appearance-none w-[223px] h-9 px-3 py-2 text-sm font-medium text-Info-NormalActive bg-white border outline-none border-Info-NormalActive rounded shadow-sm"
+          className="form-select appearance-none default:w-[223px] xl:w-[223px] default:h-9 xl:h-[30px] px-3 py-2 default:text-sm xl:text-[10px] font-medium text-Info-NormalActive bg-white border outline-none border-Info-NormalActive rounded shadow-sm"
           value={showPemakaian}
           onChange={handlerOnChange}
         >
@@ -38,7 +38,7 @@ export default function CobaDropdown() {
           <option value="MingguIni">1 Minggu</option>
           <option value="BulanIni">1 Bulan</option>
         </select>
-        <HiChevronDown className="absolute right-[12px] w-5 h-5 mt-2 text-Info-Normal" />
+        <HiChevronDown className="absolute right-[12px] default:w-5 default:h-5 xl:w-[15px] xl:h-[15px] mt-2 text-Info-Normal" />
       </div>
       {hariContentVisible && <HariIni />}
       {mingguContentVisible && <MingguIni />}

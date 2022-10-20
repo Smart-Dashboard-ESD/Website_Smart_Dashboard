@@ -3,28 +3,30 @@ import React from "react";
 export default function TableHistory() {
   return (
     <div className="ml-[30px] overflow-x-auto mr-[30px] rounded">
-      <table className="min-w-full border-separate table-auto border-spacing-y-[30px]">
-        <thead className="bg-Primary-Light h-[43px]">
+      <table className="min-w-full border-separate table-auto xl:border-spacing-y-[18px] default:border-spacing-y-[30px]">
+        <thead className="bg-Primary-Light default:h-[43px] xl:h-[33px]">
           <tr>
-            <th className="text-sm font-medium text-Black-Normal">Bulan</th>
-            <th className="text-sm font-medium text-Greyscale-NormalHover">
+            <th className="font-medium default:text-sm xl:text-xs text-Black-Normal">
+              Bulan
+            </th>
+            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
               ID Pembayaran
             </th>
-            <th className="text-sm font-medium text-Greyscale-NormalHover">
+            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
               Tagihan
             </th>
-            <th className="text-sm font-medium text-Greyscale-NormalHover">
+            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
               Pajak
             </th>
-            <th className="text-sm font-medium text-Greyscale-NormalHover">
+            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
               Dibayarkan pada
             </th>
             <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr className="h-[40px]">
-            <td className="flex flex-col">
+        <tbody className="default:text-base xl:text-sm">
+          <tr className="default:h-[40px] xl:h-[25px]">
+            <td className="flex flex-col leading-5">
               <span className="font-medium text-Black-Normal">Januari</span>
               <span className="font-sm text-Greyscale-Normal">
                 Penggunaan : 399 m3
@@ -45,8 +47,8 @@ export default function TableHistory() {
               </div>
             </td>
           </tr>
-          <tr className="h-[40px]">
-            <td className="flex flex-col">
+          <tr className="default:h-[40px] xl:h-[25px]">
+            <td className="flex flex-col leading-5">
               <span className="font-medium text-Black-Normal">Februari</span>
               <span className="font-sm text-Greyscale-Normal">
                 Penggunaan : 399 m3
@@ -67,8 +69,8 @@ export default function TableHistory() {
               </div>
             </td>
           </tr>
-          <tr className="h-[40px]">
-            <td className="flex flex-col">
+          <tr className="default:h-[40px] xl:h-[25px]">
+            <td className="flex flex-col leading-5">
               <span className="font-medium text-Black-Normal">Maret</span>
               <span className="font-sm text-Greyscale-Normal">
                 Penggunaan : 399 m3
@@ -89,8 +91,8 @@ export default function TableHistory() {
               </div>
             </td>
           </tr>
-          <tr className="h-[40px]">
-            <td className="flex flex-col">
+          <tr className="default:h-[40px] xl:h-[25px]">
+            <td className="flex flex-col leading-5">
               <span className="font-medium text-Black-Normal">April</span>
               <span className="font-sm text-Greyscale-Normal">
                 Penggunaan : 399 m3

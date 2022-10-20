@@ -11,22 +11,54 @@ import Pembayaran from "./pages/Customer/Pembayaran";
 import { ChakraProvider } from "@chakra-ui/react";
 import Page404 from "./pages/Page404";
 import DashboardAdmin from "./pages/Admin/DashboardAdmin";
+import UserPassword from "./pages/UserPassword";
+import DataAkunCustomer from "./pages/Admin/DataAkunCustomer";
+import DataAkunBilling from "./pages/Admin/DataAkunBilling";
+import DataAkunAdmin from "./pages/Admin/DataAkunAdmin";
+import DataKeluhan from "./pages/Admin/DataKeluhan";
+import DashboardBilling from "./pages/Billing/DashboardBilling";
+import TransaksiPelanggan from "./pages/Billing/TransaksiPelanggan";
+import HargaAir from "./pages/Billing/HargaAir";
+import RegisterDevice from "./pages/Customer/RegisterDevice";
+import CreateDevice from "./pages/Admin/CreateDevice";
+import RequireAuth from "./hooks/RequireAuth";
 
 function App() {
   return (
-    <div className="w-screen h-[1024px] App">
+    <div className="w-screen h-screen App">
       <ChakraProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<DashboardUser />} />
-            <Route path="/tagihan" element={<Tagihan />} />
-            <Route path="/customer-care" element={<CustomerCare />} />
+            {/* General Links */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/data-diri" element={<DataDiri />} />
-            <Route path="/pembayaran" element={<Pembayaran />} />
+            <Route path="/register-device" element={<RegisterDevice />} />
+            <Route path="/username" element={<UserPassword />} />
+
+            <Route element={<RequireAuth />}>
+              {/* Customer Links */}
+              <Route path="/dashboard-user" element={<DashboardUser />} />
+              <Route path="/tagihan" element={<Tagihan />} />
+              <Route path="/customer-care" element={<CustomerCare />} />
+              <Route path="/pembayaran" element={<Pembayaran />} />
+
+              {/* Admin Links */}
+              <Route path="/dashboard-admin" element={<DashboardAdmin />} />
+              <Route path="/data-akun-cust" element={<DataAkunCustomer />} />
+              <Route path="/data-akun-billing" element={<DataAkunBilling />} />
+              <Route path="/data-akun-admin" element={<DataAkunAdmin />} />
+              <Route path="/data-keluhan" element={<DataKeluhan />} />
+              <Route path="/create-device" element={<CreateDevice />} />
+
+              {/* Billing Links */}
+              <Route path="/dashboard-billing" element={<DashboardBilling />} />
+              <Route path="/transaksi" element={<TransaksiPelanggan />} />
+              <Route path="/harga-air" element={<HargaAir />} />
+            </Route>
+
+            {/* Missing Links */}
             <Route path="*" element={<Page404 />} />
-            <Route path="/dashboard-admin" element={<DashboardAdmin />} />
           </Routes>
         </BrowserRouter>
       </ChakraProvider>

@@ -2,8 +2,8 @@ import React from "react";
 
 export default function ChartLegend() {
   return (
-    <div className="absolute right-0 mt-[15px] mr-[50px] w-[177px] h-[180px]">
-      <div className="border-b border-Greyscale-Normal">
+    <div className="absolute xl:flex default:flex default:flex-col right-0 default:mt-[15px] xl:mt-[30px] mr-[50px] default:w-[177px] xl:w-[300px] default:h-[180px]">
+      <div className="default:border-b default:border-Greyscale-Normal">
         <div className="flex flex-row items-center justify-between">
           <h1 className="text-[10px] font-semibold text-Info-NormalHover">
             Penggunaan Weekday
@@ -16,7 +16,7 @@ export default function ChartLegend() {
           Senin - Jumat
         </p>
       </div>
-      <div className="mt-[15px]">
+      <div className="default:mt-[15px] default:ml-0 xl:ml-[15px]">
         <div className="flex flex-row items-center justify-between">
           <h1 className="text-[10px] font-semibold text-Info-NormalHover">
             Penggunaan Weekend

@@ -4,16 +4,16 @@ import Dropdown from "./Dropdown/Dropdown";
 
 export default function DoughnutChartSection() {
   return (
-    <div className="w-[603px] h-[350px] bg-white rounded drop-shadow-sm">
-      <h1 className="pt-[28px] ml-5 font-medium text-xl text-Neutral-Normal">
+    <div className="default:w-[603px] default:h-[350px] xl:w-[593px] xl:h-[230px] bg-white rounded drop-shadow-sm">
+      <h1 className="default:pt-[28px] xl:pt-[20px] ml-5 font-medium default:text-xl xl:text-base text-[#242424]">
         Distribusi Konsumsi
       </h1>
       <Dropdown />
-      <div className="absolute border-t bottom-0 border-Greyscale-Normal w-[552px] h-[63px] mx-[25px] flex justify-between items-center">
+      <div className="absolute border-t bottom-0 border-Greyscale-Normal w-[552px] xl:h-[43px] default:h-[63px] mx-[25px] flex justify-between items-center">
         <h1 className="text-sm font-medium text-[#242424]">
           lorem ipsum dolor sit amet
         </h1>
-        <button className="w-[90px] h-[36px] border border-Primary-Normal rounded text-Primary-Normal text-sm font-medium">
+        <button className="w-[90px] default:h-[36px] xl:h-[24px] border border-Primary-Normal rounded text-Primary-Normal xl:text-xs default:text-sm font-medium">
           View Detail
         </button>
       </div>

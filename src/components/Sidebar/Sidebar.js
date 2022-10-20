@@ -8,7 +8,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-white w-20 lg:w-[290px]">
+    <div className="default:min-h-screen 4xl:h-[1080px] bg-white w-20 lg:w-[290px]">
       <Link to="/">
         <div className="flex items-center ml-[30px] mt-[50px]">
           <img src={logo} alt="logo" className="" />
@@ -47,7 +47,7 @@ export default function Sidebar() {
           <span className="hidden text-base lg:block">Pusat Bantuan</span>
         </Link>
       </div>
-      <div className="w-16 lg:w-[260px] mx-auto mt-[380px] border-t border-[#BBBBBB]">
+      <div className="w-16 lg:w-[260px] mx-auto default:mt-[380px] xl:mt-[250px] border-t border-[#BBBBBB]">
         <Link to="/profile">
           <div className="mt-6">
             <img

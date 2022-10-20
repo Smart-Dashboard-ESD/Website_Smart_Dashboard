@@ -25,8 +25,17 @@ export default function Register() {
             </h1>
           </div>
           <div className="w-[40px] border-b-2 border-Greyscale-Normal border-dotted border-slate-400 m-4"></div>
-          <div className="text-white rounded-full flex items-center justify-center bg-Primary-Normal w-[35px] h-[35px] ">
+          <div className="text-white rounded-full flex items-center justify-center bg-Greyscale-Normal w-[35px] h-[35px]">
             2
+          </div>
+          <div className="">
+            <h1 className="ml-2 text-base font-semibold text-Greyscale-Normal">
+              Buat Username
+            </h1>
+          </div>
+          <div className="w-[40px] border-b-2 border-Greyscale-Normal border-dotted border-slate-400 m-4"></div>
+          <div className="text-white rounded-full flex items-center justify-center bg-Primary-Normal w-[35px] h-[35px] ">
+            3
           </div>
           <div className="">
             <h1 className="ml-2 text-base font-semibold text-Danger-Light">

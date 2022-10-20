@@ -21,7 +21,7 @@ export default function PaginationChart() {
     <div>
       {pageSatuContentVisible && <ChartLegendBulan1 />}
       {pageDuaContentVisible && <ChartLegendBulan2 />}
-      <div className="absolute flex justify-end gap-x-2 bottom-20 right-6">
+      <div className="absolute flex justify-end gap-x-2 xl:bottom-[50px] default:bottom-20 right-6">
         <button
           onClick={() => {
             setCurrentPage(1);

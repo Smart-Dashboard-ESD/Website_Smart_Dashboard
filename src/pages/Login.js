@@ -1,5 +1,4 @@
 import React from "react";
-
 import logo from "../assets/img/logoptmulti.png";
 import assetlogin1 from "../assets/img/assetlogin1.png";
 import assetlogin2 from "../assets/img/assetlogin2.png";
@@ -32,12 +31,12 @@ export default function Login() {
         alt="assetlogin3"
         className="absolute right-0 z-20 object-cover"
       />
-      <h1 className="absolute z-40 text-5xl font-bold text-white mt-[730px] ml-[720px]">
+      <h1 className="absolute z-40 text-5xl font-bold text-white mt-[730px] default:ml-[720px] 4xl:ml-[1000px]">
         Cek Pengelolaan Air
         <br />
         mu disini !
       </h1>
-      <h1 className="absolute z-40 text-3xl font-medium mt-[870px] ml-[720px] text-[#BDBDBD]">
+      <h1 className="absolute z-40 text-3xl font-medium mt-[870px] default:ml-[720px] 4xl:ml-[1000px] text-[#BDBDBD]">
         Nikmati kemudahan mengecek
         <br />
         pengunaan air tanpa perlu khawatir.
