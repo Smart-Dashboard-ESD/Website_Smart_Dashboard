@@ -58,7 +58,7 @@ function App() {
             </Route>
 
             {/* Missing Links */}
-            <Route path="*" element={<Page404 />} />
+            <Route path="/*" element={<Page404 />} />
           </Routes>
         </BrowserRouter>
       </ChakraProvider>
