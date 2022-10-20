@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function UserPassword() {
   const navigate = useNavigate();
-  const url = process.env.REACT_APP_API_ENDPOINT + "/register";
+  const url = process.env.REACT_APP_API_ENDPOINT + "/user/register";
   const [open, setopen] = useState(false);
 
   const toggle = () => {
