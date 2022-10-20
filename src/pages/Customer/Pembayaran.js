@@ -5,7 +5,7 @@ import SidebarAlt from "../../components/Sidebar/SidebarAlt";
 
 export default function Pembayaran() {
   return (
-    <div className="flex w-screen h-screen bg-[#F3F3F3]">
+    <div className="flex w-screen default:min-h-screen 4xl:h-[1080px] bg-[#F3F3F3]">
       <SidebarAlt />
       <div>
         <div className="mt-[75px] ml-[50px]">

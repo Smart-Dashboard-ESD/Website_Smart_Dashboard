@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
-export default function KotaDropdown() {
+export default function KotaDropdown({ selected }) {
   const [showKota, setShowKota] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
   useEffect(() => {
@@ -59,9 +59,10 @@ export default function KotaDropdown() {
           className="dropdownkota w-[251px] h-[48px] bg-white text-sm rounded border text-Black-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
           onClick={() => setShowKota(!showKota)}
           type="button"
-          id="menu-button"
+          id="city"
           aria-expanded="true"
           aria-haspopup="true"
+          value={selectedIndex}
         >
           {selectedIndex !== null ? kotaList[selectedIndex].name : "Kota"}
           <HiChevronDown className="w-5 h-5" />
@@ -83,6 +84,7 @@ export default function KotaDropdown() {
                 onClick={() => {
                   setSelectedIndex(index);
                   setShowKota(false);
+                  selected(item.value);
                 }}
               >
                 {item.name}

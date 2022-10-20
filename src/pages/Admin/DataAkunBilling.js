@@ -4,7 +4,7 @@ import TableAkunBilling from "../../components/Table Akun/TableAkunBilling";
 
 export default function DataAkunBilling() {
   return (
-    <div className="w-screen h-screen flex bg-[#F3F3F3]">
+    <div className="w-screen h-screen flex bg-[#F3F3F3] overflow-y-auto">
       <SidebarAdmin />
       <div>
         <div className="default:mt-[30px] default:ml-[20px]">

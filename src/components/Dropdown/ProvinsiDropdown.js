@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
-export default function ProvinsiDropdown() {
+export default function ProvinsiDropdown({ selected }) {
   const [showProvinsi, setShowProvinsi] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
 
@@ -84,7 +84,7 @@ export default function ProvinsiDropdown() {
           className="dropdownprovinsi w-[252px] h-[48px] bg-white text-sm rounded border text-Black-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
           onClick={() => setShowProvinsi(!showProvinsi)}
           type="button"
-          id="menu-button"
+          id="province"
           aria-expanded="true"
           aria-haspopup="true"
         >
@@ -100,6 +100,7 @@ export default function ProvinsiDropdown() {
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
+          value={selectedIndex}
         >
           <div className="py-1" role="none">
             {provinsiList.map((provinsi, index) => (
@@ -107,9 +108,11 @@ export default function ProvinsiDropdown() {
                 className="inline-flex w-[252px] py-2 pl-3 text-sm text-Black-Normal"
                 role="menuitem"
                 key={provinsi.name}
+                value={index}
                 onClick={() => {
                   setSelectedIndex(index);
                   setShowProvinsi(false);
+                  selected(provinsi.value);
                 }}
               >
                 {provinsi.name}

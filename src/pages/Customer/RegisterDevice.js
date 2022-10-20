@@ -3,7 +3,7 @@ import SidebarAlt from "../../components/Sidebar/SidebarAlt";
 
 export default function RegisterDevice() {
   return (
-    <div className="flex w-screen h-screen bg-[#F3F3F3]">
+    <div className="flex w-screen default:min-h-screen 4xl:h-[1080px] bg-[#F3F3F3]">
       <SidebarAlt />
       <div>
         <div className="default:mt-[100px] default:ml-[63px]">

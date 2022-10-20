@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
-export default function GenderDropdown() {
+export default function GenderDropdown({ selected }) {
   const [showGender, setShowGender] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
 
@@ -27,7 +27,7 @@ export default function GenderDropdown() {
   ]);
 
   return (
-    <div className="mt-2 gap-x-2">
+    <div className="mt-2 overflow-auto gap-x-2">
       <div>
         <button
           className="dropdowngender w-[512px] h-[48px] bg-white text-sm rounded border text-Black-Normal placeholder:text-Greyscale-Normal border-Greyscale-Normal inline-flex justify-between items-center px-4"
@@ -59,6 +59,7 @@ export default function GenderDropdown() {
                 onClick={() => {
                   setSelectedIndex(index);
                   setShowGender(false);
+                  selected(item.value);
                 }}
               >
                 {item.name}

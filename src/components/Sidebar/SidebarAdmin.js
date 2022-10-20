@@ -14,8 +14,8 @@ export default function SidebarAdmin() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-white w-20 lg:w-[290px]">
-      <Link to="/">
+    <div className="default:min-h-screen 4xl:h-[1080px] bg-white w-20 lg:w-[290px]">
+      <Link to="/dashboard-admin">
         <div className="flex items-center ml-[30px] mt-[50px]">
           <img src={logo} alt="logo" className="" />
           <div className="ml-2 font-semibold leading-tight text-Primary-Normal">

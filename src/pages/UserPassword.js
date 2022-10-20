@@ -1,17 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SidebarAlt from "../components/Sidebar/SidebarAlt";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function UserPassword() {
+  const navigate = useNavigate();
+  const url = process.env.REACT_APP_API_ENDPOINT + "/register";
   const [open, setopen] = useState(false);
 
   const toggle = () => {
     setopen(!open);
   };
 
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    localStorage.getItem("data") &&
+      setData(JSON.parse(localStorage.getItem("data")));
+    localStorage.removeItem("data");
+  }, []);
+
+  function submit(e) {
+    e.preventDefault();
+    axios.post(url, data).then((res) => {
+      console.log(res).catch((err) => {
+        console.log(err);
+      });
+    });
+    navigate("/login");
+  }
+
+  function handle(e) {
+    const newData = { ...data };
+    newData[e.target.id] = e.target.value;
+    setData(newData);
+    console.log(newData);
+  }
+
   return (
-    <div className="flex w-screen h-screen bg-[#F3F3F3]">
+    <div className="flex w-screen default:h-screen 4xl:h-[1080px] bg-[#F3F3F3]">
       <SidebarAlt />
       <div>
         <div className="absolute top-0 right-[202px] flex items-center mt-8">
@@ -51,6 +80,9 @@ export default function UserPassword() {
           </h2>
           <input
             type="text"
+            onChange={(e) => handle(e)}
+            id="username"
+            value={data.username}
             placeholder="Buat username anda"
             className="default:mt-2 placeholder:text-[#8F8F8F] placeholder:text-sm placeholder:font-medium default:w-[512px] default:h-[48px] rounded default:border-[2px] default:border-[#939393] default:outline-none default:pl-[16px] default:pr-[10px] default:py-[10px] default:text-[#444444] default:font-semibold"
           />
@@ -59,6 +91,9 @@ export default function UserPassword() {
           </h2>
           <input
             type={open ? "text" : "password"}
+            onChange={(e) => handle(e)}
+            id="password"
+            value={data.password}
             placeholder="Buat password anda"
             className="default:mt-2 placeholder:text-[#8F8F8F] placeholder:text-sm placeholder:font-medium default:w-[512px] default:h-[48px] rounded default:border-[2px] default:border-[#939393] default:outline-none default:pl-[16px] default:pr-[10px] default:py-[10px] default:text-[#444444] default:font-semibold"
           />
@@ -73,11 +108,12 @@ export default function UserPassword() {
             <h1 className="font-medium default:text-sm text-Greyscale-NormalHover">
               *Form wajib terisi penuh
             </h1>
-            <Link to="/register">
-              <button className="w-[158px] h-[39px] bg-Primary-Normal ml-[264px] rounded text-white text-base font-medium">
-                Save & Continue
-              </button>
-            </Link>
+            <button
+              onClick={submit}
+              className="w-[158px] h-[39px] bg-Primary-Normal ml-[264px] rounded text-white text-base font-medium"
+            >
+              Save & Continue
+            </button>
           </div>
         </div>
       </div>

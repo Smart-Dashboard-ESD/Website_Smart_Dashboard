@@ -11,7 +11,7 @@ import HargaAirTerkini from "../../components/Advance Statistik/HargaAirTerkini"
 
 export default function DashboardAdmin() {
   return (
-    <div className="w-screen h-screen flex bg-[#F3F3F3]">
+    <div className="w-screen h-screen flex bg-[#F3F3F3] overflow-y-auto">
       <SidebarAdmin />
       <div>
         <Header />

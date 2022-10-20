@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function SidebarAlt() {
   return (
-    <div className="min-h-screen bg-white w-20 lg:w-[297px]">
+    <div className="default:min-h-screen 4xl:h-[1080px] bg-white w-20 lg:w-[297px]">
       <Link to="/">
         <div className="flex items-center justify-center">
           <img src={logo} alt="logo" className="mt-14" />
