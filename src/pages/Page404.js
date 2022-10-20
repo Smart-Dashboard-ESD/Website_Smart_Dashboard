@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PageNotFound from "../assets/img/404Error.png";
 
 export default function Page404() {
+  const history = useNavigate();
   return (
     <div className="w-screen h-screen">
       <div className="flex items-center justify-center pt-[60px]">
@@ -22,11 +23,12 @@ export default function Page404() {
           <br /> dashboard untuk kembali mengakses layanan kami
         </p>
         <span>
-          <Link to="/">
-            <button className="w-[450px] h-[56px] bg-Primary-Normal rounded text-white mt-[50px] font-semibold text-[20px]">
-              Back To Dashboard
-            </button>
-          </Link>
+          <button
+            onClick={() => history(-1)}
+            className="w-[450px] h-[56px] bg-Primary-Normal rounded text-white mt-[50px] font-semibold text-[20px]"
+          >
+            Back To Dashboard
+          </button>
         </span>
       </div>
     </div>
