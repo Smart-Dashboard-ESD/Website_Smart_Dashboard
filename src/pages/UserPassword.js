@@ -14,7 +14,12 @@ export default function UserPassword() {
     setopen(!open);
   };
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([
+    {
+      username: "",
+      password: "",
+    },
+  ]);
 
   useEffect(() => {
     localStorage.getItem("data") &&

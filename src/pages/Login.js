@@ -31,12 +31,12 @@ export default function Login() {
         alt="assetlogin3"
         className="absolute right-0 z-20 object-cover"
       />
-      <h1 className="absolute z-40 text-5xl font-bold text-white mt-[730px] default:ml-[720px] 4xl:ml-[1000px]">
+      <h1 className="absolute z-40 text-5xl font-bold text-white mt-[730px] default:ml-[720px] 4xl:ml-[1000px] 5xl:ml-[1250px]">
         Cek Pengelolaan Air
         <br />
         mu disini !
       </h1>
-      <h1 className="absolute z-40 text-3xl font-medium mt-[870px] default:ml-[720px] 4xl:ml-[1000px] text-[#BDBDBD]">
+      <h1 className="absolute z-40 text-3xl font-medium mt-[870px] default:ml-[720px] 4xl:ml-[1000px] 5xl:ml-[1250px] text-[#BDBDBD]">
         Nikmati kemudahan mengecek
         <br />
         pengunaan air tanpa perlu khawatir.

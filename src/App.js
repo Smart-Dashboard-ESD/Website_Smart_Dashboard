@@ -25,7 +25,7 @@ import RequireAuth from "./hooks/RequireAuth";
 
 function App() {
   return (
-    <div className="w-screen h-screen App">
+    <div className="w-screen deafult:h-screen 5xl:h-[1080px] App">
       <ChakraProvider>
         <BrowserRouter>
           <Routes>

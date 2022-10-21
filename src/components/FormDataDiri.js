@@ -51,7 +51,7 @@ export default function FormDataDiri() {
   function submit(e) {
     e.preventDefault();
     var dataSaved = {
-      nik: parseInt(data.nik),
+      nik: data.nik,
       name: data.name,
       birthplace: data.birthplace,
       birthdate: data.birthdate,

@@ -94,8 +94,8 @@ export default function LoginForm() {
   };
 
   return (
-    <form encType="multipart/form-data">
-      <div className="w-[480px] h-[625px] z-50 absolute bg-[#F8F8F8] default:ml-[141px] 4xl:ml-[370px] mt-[242px] border rounded border-[#BFBFBF]">
+    <form>
+      <div className="w-[480px] h-[625px] z-50 absolute bg-[#F8F8F8] default:ml-[141px] 4xl:ml-[370px] 5xl:ml-[650px] mt-[242px] border rounded border-[#BFBFBF]">
         <div className="mt-[32px] ml-[32px]">
           <h1 className="font-semibold text-[#444444] text-2xl">Sign In</h1>
           <p className="text-[#939393] font-medium text-base leading-none mt-2">
