@@ -9,7 +9,7 @@ export default function SidebarBilling() {
 
   return (
     <div className="default:min-h-screen 4xl:h-[1080px] bg-white w-20 lg:w-[290px]">
-      <Link to="/">
+      <Link to="/dashboard-billing">
         <div className="flex items-center ml-[30px] mt-[50px]">
           <img src={logo} alt="logo" className="" />
           <div className="ml-2 font-semibold leading-tight text-Primary-Normal">

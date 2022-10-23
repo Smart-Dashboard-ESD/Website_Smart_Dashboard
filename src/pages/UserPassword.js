@@ -30,11 +30,14 @@ export default function UserPassword() {
   function submit(e) {
     e.preventDefault();
     axios.post(url, data).then((res) => {
-      console.log(res).catch((err) => {
-        console.log(err);
-      });
+      if (res.message === "Network Error") {
+        console.log(res);
+        alert("Periksa koneksi internet anda");
+      } else {
+        console.log(res);
+        navigate("/login");
+      }
     });
-    navigate("/login");
   }
 
   function handle(e) {
@@ -45,7 +48,7 @@ export default function UserPassword() {
   }
 
   return (
-    <div className="flex w-screen default:h-screen 4xl:h-[1080px] bg-[#F3F3F3]">
+    <div className="flex w-screen h-screen 4xl:h-[1080px] bg-[#F3F3F3]">
       <SidebarAlt />
       <div>
         <div className="absolute top-0 right-[202px] flex items-center mt-8">
@@ -76,11 +79,11 @@ export default function UserPassword() {
             </h1>
           </div>
         </div>
-        <div className="default:mt-[100px] default:ml-[63px]">
-          <h1 className="font-semibold default:text-lg text-Primary-Normal">
+        <div className="mt-[100px] ml-[63px]">
+          <h1 className="text-lg font-semibold text-Primary-Normal">
             Buat Username dan Password
           </h1>
-          <h2 className="font-semibold text-[#444444] default:text-base default:mt-[20px]">
+          <h2 className="font-semibold text-[#444444] text-base mt-[20px]">
             Username
           </h2>
           <input
@@ -89,9 +92,9 @@ export default function UserPassword() {
             id="username"
             value={data.username}
             placeholder="Buat username anda"
-            className="default:mt-2 placeholder:text-[#8F8F8F] placeholder:text-sm placeholder:font-medium default:w-[512px] default:h-[48px] rounded default:border-[2px] default:border-[#939393] default:outline-none default:pl-[16px] default:pr-[10px] default:py-[10px] default:text-[#444444] default:font-semibold"
+            className="mt-2 placeholder:text-[#8F8F8F] placeholder:text-sm placeholder:font-medium w-[512px] h-[48px] rounded border-[2px] border-[#939393] outline-none pl-[16px] pr-[10px] py-[10px] text-[#444444] font-semibold"
           />
-          <h2 className="font-semibold text-[#444444] default:text-base default:mt-[20px]">
+          <h2 className="font-semibold text-[#444444] text-base mt-[20px]">
             Password
           </h2>
           <input
@@ -100,7 +103,7 @@ export default function UserPassword() {
             id="password"
             value={data.password}
             placeholder="Buat password anda"
-            className="default:mt-2 placeholder:text-[#8F8F8F] placeholder:text-sm placeholder:font-medium default:w-[512px] default:h-[48px] rounded default:border-[2px] default:border-[#939393] default:outline-none default:pl-[16px] default:pr-[10px] default:py-[10px] default:text-[#444444] default:font-semibold"
+            className="mt-2 placeholder:text-[#8F8F8F] placeholder:text-sm placeholder:font-medium w-[512px] h-[48px] rounded border-[2px] border-[#939393] outline-none pl-[16px] pr-[10px] py-[10px] text-[#444444] font-semibold"
           />
           <div className="absolute text-xl top-[295px] ml-[475px]">
             {open === false ? (
@@ -110,7 +113,7 @@ export default function UserPassword() {
             )}
           </div>
           <div className="flex items-center mt-[50px]">
-            <h1 className="font-medium default:text-sm text-Greyscale-NormalHover">
+            <h1 className="text-sm font-medium text-Greyscale-NormalHover">
               *Form wajib terisi penuh
             </h1>
             <button

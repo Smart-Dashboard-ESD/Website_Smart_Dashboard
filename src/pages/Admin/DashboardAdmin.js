@@ -20,17 +20,17 @@ export default function DashboardAdmin() {
           <TotalOmset />
           <TotalAir />
         </div>
-        <h1 className="default:text-[20px] font-semibold text-Black-Normal default:mt-[30px] default:ml-[46px]">
+        <h1 className="text-[20px] font-semibold text-Black-Normal mt-[30px] ml-[46px]">
           Statistik Customer
         </h1>
-        <div className="flex default:mt-[25px]">
+        <div className="flex mt-[25px]">
           <CustomerTerbanyak />
           <PenggunaTerbanyak />
         </div>
-        <h1 className="default:text-[20px] font-semibold text-Black-Normal default:mt-[30px] default:ml-[46px]">
+        <h1 className="text-[20px] font-semibold text-Black-Normal mt-[30px] ml-[46px]">
           Advance Statistik Customer
         </h1>
-        <div className="flex default:mt-[19px] default:ml-[42px]">
+        <div className="flex mt-[19px] default:ml-[42px] 2xl:ml-[30px]">
           <RataRataPenggunaan />
           <HargaAirTerkini />
         </div>

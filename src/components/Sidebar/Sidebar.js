@@ -8,7 +8,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   return (
-    <div className="default:min-h-screen 4xl:h-[1080px] bg-white w-20 lg:w-[290px]">
+    <div className="default:min-h-screen sticky overflow-y-scroll bg-white w-20 lg:w-[290px]">
       <Link to="/dashboard-user">
         <div className="flex items-center ml-[30px] mt-[50px]">
           <img src={logo} alt="logo" className="" />

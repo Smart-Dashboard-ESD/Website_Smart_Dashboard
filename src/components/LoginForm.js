@@ -95,7 +95,7 @@ export default function LoginForm() {
 
   return (
     <form>
-      <div className="w-[480px] h-[625px] z-50 absolute bg-[#F8F8F8] default:ml-[141px] 4xl:ml-[370px] 5xl:ml-[650px] mt-[242px] border rounded border-[#BFBFBF]">
+      <div className="w-[480px] h-[580px] z-50 absolute bg-[#F8F8F8] default:ml-[141px] 4xl:ml-[370px] 5xl:ml-[650px] 2xl:ml-[230px] default:mt-[242px] 2xl:mt-[140px] border rounded border-[#BFBFBF]">
         <div className="mt-[32px] ml-[32px]">
           <h1 className="font-semibold text-[#444444] text-2xl">Sign In</h1>
           <p className="text-[#939393] font-medium text-base leading-none mt-2">
@@ -182,12 +182,12 @@ export default function LoginForm() {
             Remember Me
           </label>
         </div>
-        <div
+        <button
           onClick={submit}
           className="w-[416px] h-[51px] bg-[#1B7FB5] text-white font-semibold rounded mt-[24px] ml-[32px] flex items-center justify-center"
         >
           Sign In
-        </div>
+        </button>
         <h2 className="mt-[24px] ml-[32px] text-[#9F9F9F] text-sm font-medium">
           Sudah punya akun?{" "}
           <Link to="/data-diri" className="text-Primary-Normal">
