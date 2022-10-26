@@ -36,6 +36,11 @@ function App() {
             <Route path="/register-device" element={<RegisterDevice />} />
             <Route path="/username" element={<UserPassword />} />
             <Route path="/dashboard-admin" element={<DashboardAdmin />} />
+            <Route path="/data-akun-cust" element={<DataAkunCustomer />} />
+            <Route path="/data-akun-billing" element={<DataAkunBilling />} />
+            <Route path="/data-akun-admin" element={<DataAkunAdmin />} />
+            <Route path="/data-keluhan" element={<DataKeluhan />} />
+            <Route path="/create-device" element={<CreateDevice />} />
 
             <Route element={<RequireAuth />}>
               {/* Customer Links */}
@@ -45,11 +50,6 @@ function App() {
               <Route path="/pembayaran" element={<Pembayaran />} />
 
               {/* Admin Links */}
-              <Route path="/data-akun-cust" element={<DataAkunCustomer />} />
-              <Route path="/data-akun-billing" element={<DataAkunBilling />} />
-              <Route path="/data-akun-admin" element={<DataAkunAdmin />} />
-              <Route path="/data-keluhan" element={<DataKeluhan />} />
-              <Route path="/create-device" element={<CreateDevice />} />
 
               {/* Billing Links */}
               <Route path="/dashboard-billing" element={<DashboardBilling />} />
