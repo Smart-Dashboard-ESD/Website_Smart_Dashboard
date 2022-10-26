@@ -1,5 +1,5 @@
 import React from "react";
-
+import ButtonDetail from "./ButtonDetail";
 import Dropdown from "./Dropdown/Dropdown";
 
 export default function DoughnutChartSection() {
@@ -13,9 +13,7 @@ export default function DoughnutChartSection() {
         <h1 className="text-sm font-medium text-[#242424]">
           lorem ipsum dolor sit amet
         </h1>
-        <button className="w-[90px] default:h-[36px] xl:h-[24px] border border-Primary-Normal rounded text-Primary-Normal xl:text-xs default:text-sm font-medium">
-          View Detail
-        </button>
+        <ButtonDetail />
       </div>
     </div>
   );

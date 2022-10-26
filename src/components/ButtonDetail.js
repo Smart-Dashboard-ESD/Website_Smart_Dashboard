@@ -59,10 +59,11 @@ export default function ButtonDetail() {
         finalFocusRef={finalRef}
         isOpen={isOpen}
         onClose={onClose}
+        size="xl"
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create your account</ModalHeader>
+          <ModalHeader>Data Penggunaan Air terbaru</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <TableContainer>

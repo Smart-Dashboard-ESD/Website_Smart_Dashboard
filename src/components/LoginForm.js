@@ -65,7 +65,7 @@ export default function LoginForm() {
       axios
         .post(url2, data)
         .then((res) => {
-          if (res.data.message === "Successfully logged in") {
+          if (res.data.message === "Success") {
             console.log(res);
             const token = res.data.Token;
             localStorage.setItem("token", res.data.Token);
