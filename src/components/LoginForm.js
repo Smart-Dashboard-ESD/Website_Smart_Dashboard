@@ -7,7 +7,7 @@ import useAuth from "../hooks/useAuth";
 export default function LoginForm() {
   const { setAuth } = useAuth();
   const [open, setopen] = useState(false);
-  const url = process.env.REACT_APP_API_ENDPOINT + "/user/login";
+  const url = process.env.REACT_APP_API_ENDPOINT + "/users/login";
   const url2 = process.env.REACT_APP_API_ENDPOINT + "/admin/login";
   const [error, setError] = useState("");
   const [data, setData] = useState({
@@ -47,7 +47,7 @@ export default function LoginForm() {
       axios
         .post(url, data)
         .then((res) => {
-          if (res.data.message === "success") {
+          if (res.data.message === "Success") {
             console.log(res);
             const token = res.data.token;
             localStorage.setItem("token", res.data.token);
