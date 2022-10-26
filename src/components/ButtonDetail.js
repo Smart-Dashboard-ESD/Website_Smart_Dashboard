@@ -22,7 +22,18 @@ import axios from "axios";
 
 export default function ButtonDetail() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  let [data, setData] = useState([]);
+  let [data, setData] = useState([
+    {
+      MeterNumber: "",
+      ForwardFlow: "",
+      ReverseFlow: "",
+      WaterUnit: "",
+      TimeStamp: "",
+      StatusByte: "",
+      BatteryVoltage: "",
+      CheckByte: "",
+    },
+  ]);
 
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
@@ -71,9 +82,9 @@ export default function ButtonDetail() {
                 <TableCaption>Data penggunaan air terbaru</TableCaption>
                 <Thead>
                   <Tr>
-                    <Th isNumeric>Meter Number</Th>
-                    <Th isNumeric>Forward Flow</Th>
-                    <Th isNumeric>Reverse Flow</Th>
+                    <Th>Meter Number</Th>
+                    <Th>Forward Flow</Th>
+                    <Th>Reverse Flow</Th>
                     <Th>Water Unit</Th>
                     <Th>Time Stamp</Th>
                     <Th>Status Byte</Th>
