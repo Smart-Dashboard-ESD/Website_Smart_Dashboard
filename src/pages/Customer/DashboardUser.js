@@ -7,7 +7,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 
 export default function DashboardUser() {
   return (
-    <div className="flex w-screen default:min-h-screen 4xl:h-[1080px] App bg-[#F3F3F3]">
+    <div className="flex w-screen default:min-h-screen 2xl:h-[768px] 4xl:h-[1080px] App bg-[#F3F3F3]">
       <Sidebar />
       <div className="h-screen default:w-[1150px]">
         <Header />

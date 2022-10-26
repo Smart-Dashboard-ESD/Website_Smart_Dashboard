@@ -8,8 +8,8 @@ export default function Sidebar() {
   const location = useLocation();
 
   return (
-    <div className="default:min-h-screen 4xl:h-[1080px] bg-white w-20 lg:w-[290px]">
-      <Link to="/">
+    <div className="default:min-h-screen sticky overflow-y-scroll bg-white w-20 lg:w-[290px]">
+      <Link to="/dashboard-user">
         <div className="flex items-center ml-[30px] mt-[50px]">
           <img src={logo} alt="logo" className="" />
           <div className="ml-2 font-semibold leading-tight text-Primary-Normal">
@@ -22,9 +22,9 @@ export default function Sidebar() {
       </Link>
       <div className="w-16 lg:w-[250px] mx-5 mt-14 border-b border-[#BBBBBB]">
         <Link
-          to="/"
+          to="/dashboard-user"
           className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-Primary-Light active:bg-Primary-NormalActive ${
-            location.pathname === "/" &&
+            location.pathname === "/dashboard-user" &&
             "bg-Primary-NormalActive text-Primary-Light"
           }`}
         >

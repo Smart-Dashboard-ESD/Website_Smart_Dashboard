@@ -30,7 +30,7 @@ export default function BarChart() {
   ];
 
   return (
-    <div className="default:ml-[35px]">
+    <div className="ml-[35px]">
       <Chart
         options={options}
         series={series}

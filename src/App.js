@@ -25,12 +25,12 @@ import RequireAuth from "./hooks/RequireAuth";
 
 function App() {
   return (
-    <div className="w-screen h-screen App">
+    <div className="w-screen deafult:h-screen 5xl:h-[1080px] App">
       <ChakraProvider>
         <BrowserRouter>
           <Routes>
             {/* General Links */}
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" index element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/data-diri" element={<DataDiri />} />
             <Route path="/register-device" element={<RegisterDevice />} />
