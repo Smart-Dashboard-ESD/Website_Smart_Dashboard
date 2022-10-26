@@ -15,6 +15,7 @@ import UserPassword from "./pages/UserPassword";
 import DataAkunCustomer from "./pages/Admin/DataAkunCustomer";
 import DataAkunBilling from "./pages/Admin/DataAkunBilling";
 import DataAkunAdmin from "./pages/Admin/DataAkunAdmin";
+import DataDevice from "./pages/Admin/DataDevice";
 import DataKeluhan from "./pages/Admin/DataKeluhan";
 import DashboardBilling from "./pages/Billing/DashboardBilling";
 import TransaksiPelanggan from "./pages/Billing/TransaksiPelanggan";
@@ -40,6 +41,7 @@ function App() {
             <Route path="/data-akun-billing" element={<DataAkunBilling />} />
             <Route path="/data-akun-admin" element={<DataAkunAdmin />} />
             <Route path="/data-keluhan" element={<DataKeluhan />} />
+            <Route path="/data-device" element={<DataDevice />} />
             <Route path="/create-device" element={<CreateDevice />} />
 
             <Route element={<RequireAuth />}>
