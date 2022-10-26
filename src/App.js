@@ -15,6 +15,7 @@ import UserPassword from "./pages/UserPassword";
 import DataAkunCustomer from "./pages/Admin/DataAkunCustomer";
 import DataAkunBilling from "./pages/Admin/DataAkunBilling";
 import DataAkunAdmin from "./pages/Admin/DataAkunAdmin";
+import DataDevice from "./pages/Admin/DataDevice";
 import DataKeluhan from "./pages/Admin/DataKeluhan";
 import DashboardBilling from "./pages/Billing/DashboardBilling";
 import TransaksiPelanggan from "./pages/Billing/TransaksiPelanggan";
@@ -35,6 +36,13 @@ function App() {
             <Route path="/data-diri" element={<DataDiri />} />
             <Route path="/register-device" element={<RegisterDevice />} />
             <Route path="/username" element={<UserPassword />} />
+            <Route path="/dashboard-admin" element={<DashboardAdmin />} />
+            <Route path="/data-akun-cust" element={<DataAkunCustomer />} />
+            <Route path="/data-akun-billing" element={<DataAkunBilling />} />
+            <Route path="/data-akun-admin" element={<DataAkunAdmin />} />
+            <Route path="/data-keluhan" element={<DataKeluhan />} />
+            <Route path="/data-device" element={<DataDevice />} />
+            <Route path="/create-device" element={<CreateDevice />} />
 
             <Route element={<RequireAuth />}>
               {/* Customer Links */}
@@ -44,12 +52,6 @@ function App() {
               <Route path="/pembayaran" element={<Pembayaran />} />
 
               {/* Admin Links */}
-              <Route path="/dashboard-admin" element={<DashboardAdmin />} />
-              <Route path="/data-akun-cust" element={<DataAkunCustomer />} />
-              <Route path="/data-akun-billing" element={<DataAkunBilling />} />
-              <Route path="/data-akun-admin" element={<DataAkunAdmin />} />
-              <Route path="/data-keluhan" element={<DataKeluhan />} />
-              <Route path="/create-device" element={<CreateDevice />} />
 
               {/* Billing Links */}
               <Route path="/dashboard-billing" element={<DashboardBilling />} />
