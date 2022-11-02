@@ -1,19 +1,21 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { HiOutlineSearch, HiChevronDown } from "react-icons/hi";
+import { HiOutlineSearch } from "react-icons/hi";
+import DropdownTable from "../Dropdown/DropdownTable";
+import ButtonLinkDevice from "../ButtonLinkDevice";
 
-export default function TableKeluhan() {
+export default function TableDevice() {
   let [dataDevices, setDataDevices] = useState([
     {
       DeviceName: "",
       DeviceEui: "",
-      DeviceId: "",
+      DeviceIdAntares: "",
       Band: "",
+      DeviceId: "",
     },
   ]);
 
   useEffect(() => {
-    console.log("hello");
     axios
       .get(process.env.REACT_APP_API_ENDPOINT + "/admin/getAllDevices", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -25,8 +27,9 @@ export default function TableKeluhan() {
             {
               DeviceName: element.DeviceName,
               DeviceEui: element.deviceeui,
-              DeviceId: element.deviceidantares,
+              DeviceIdAntares: element.deviceidantares,
               Band: element.band,
+              DeviceId: element.deviceid,
             },
           ]);
         });
@@ -71,7 +74,7 @@ export default function TableKeluhan() {
   //     },
   //   ];
   return (
-    <div className="w-[1110px] ml-[15px] mt-[30px] h-[515px] bg-white rounded">
+    <div className="default:w-[1110px] 2xl:w-[1040px] ml-[15px] mt-[30px] default:h-[515px] bg-white rounded">
       <div className="flex pt-[26px] item-center ml-[29px]">
         <div className="">
           <h1 className="text-[20px] font-semibold text-Black-Normal">
@@ -81,14 +84,7 @@ export default function TableKeluhan() {
             Data Device yang tersedia
           </p>
         </div>
-        <select className="w-[223px] appearance-none ml-[355px] h-[48px] px-3 rounded-md border border-Info-NormalActive text-Info-NormalActive">
-          <option value="Bandung">Bandung</option>
-          <option value="Jakarta">Jakarta</option>
-          <option value="Jogyakarta">Jogyakarta</option>
-          <option value="Solo">Solo</option>
-          <option value="Padang">Padang</option>
-        </select>
-        <HiChevronDown className="absolute top-[155px] right-[420px] text-Info-NormalActive" />
+        <DropdownTable />
         <input
           placeholder="Cari"
           className="w-[223px] pl-9 ml-[15px] h-[48px] px-3 rounded-md border border-Info-NormalActive text-Info-NormalActive"
@@ -98,7 +94,7 @@ export default function TableKeluhan() {
           Search
         </button>
       </div>
-      <table className="w-[1070px] border-separate table-auto mx-5 xl:border-spacing-y-[18px] border-spacing-y-[30px]">
+      <table className="default:w-[1070px] 2xl:w-[1000px] border-separate table-auto mx-5 xl:border-spacing-y-[18px] border-spacing-y-[30px]">
         <thead className="bg-Primary-Light h-[43px] xl:h-[33px]">
           <tr>
             <th className="text-sm font-medium xl:text-xs text-Black-Normal">
@@ -118,20 +114,15 @@ export default function TableKeluhan() {
             </th>
           </tr>
         </thead>
-        {dataDevices.map((item, index) => (
+        {dataDevices.slice(1, 7).map((item, index) => (
           <tbody key={index} className="text-base xl:text-sm">
             <tr key={index} className="h-[40px] xl:h-[25px]">
-              <td className="">{item.DeviceName}</td>
-              <td>{item.DeviceEui}</td>
-              <td>{item.Band}</td>
-              <td>{item.DeviceId}</td>
-              <td className="flex items-center gap-x-2 h-[40px]">
-                <button className="w-[100px] ml-[15px] h-[20px] rounded-md text-white bg-Primary-Normal text-[12px] font-semibold">
-                  Link Device
-                </button>
-                {/* <button className="text-sm font-medium text-Danger-Normal xl:text-xs">
-                  Delete
-                </button> */}
+              <td className="justify-center ">{item.DeviceName}</td>
+              <td className="justify-center ">{item.DeviceEui}</td>
+              <td className="justify-center ">{item.Band}</td>
+              <td className="justify-center ">{item.DeviceIdAntares}</td>
+              <td className="flex items-center gap-x-2 h-[40px] justify-center">
+                <ButtonLinkDevice />
               </td>
             </tr>
           </tbody>

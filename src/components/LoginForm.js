@@ -67,7 +67,7 @@ export default function LoginForm() {
         .then((res) => {
           if (res.data.message === "Success") {
             console.log(res);
-            const token = res.data.Token;
+            const token = res.data.token;
             localStorage.setItem("token", res.data.token);
             navigate("/dashboard-admin");
             setAuth({ token });

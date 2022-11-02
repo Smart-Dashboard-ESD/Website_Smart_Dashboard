@@ -1,134 +1,124 @@
-import React from "react";
-import { HiOutlineSearch, HiChevronDown } from "react-icons/hi";
+import React, { useState } from "react";
+import { HiOutlineSearch } from "react-icons/hi";
+import DropdownTable from "../Dropdown/DropdownTable";
 
 export default function TableAkunCustomer() {
-  const data = [
+  const [data, setData] = useState([
     {
-      name: "Rizky Afiansyah",
-      nik: "1234567890",
-      jeniskelamin: "Laki-Laki",
-      address: "Jl. Raya Bogor KM 10",
-      rt: "01",
-      rw: "01",
-      city: "Jakarta Pusat",
-      province: "DKI Jakarta",
+      name: "",
+      nik: "",
+      jeniskelamin: "",
+      address: "",
+      rt: "",
+      rw: "",
+      city: "",
+      province: "",
     },
-    {
-      name: "Rizky Afiansyah",
-      nik: "1234567890",
-      jeniskelamin: "Laki-Laki",
-      address: "Jl. Raya Bogor KM 10",
-      rt: "01",
-      rw: "01",
-      city: "Jakarta Pusat",
-      province: "DKI Jakarta",
-    },
-    {
-      name: "Rizky Afiansyah",
-      nik: "1234567890",
-      jeniskelamin: "Laki-Laki",
-      address: "Jl. Raya Bogor KM 10",
-      rt: "01",
-      rw: "01",
-      city: "Jakarta Pusat",
-      province: "DKI Jakarta",
-    },
-    {
-      name: "Rizky Afiansyah",
-      nik: "1234567890",
-      jeniskelamin: "Laki-Laki",
-      address: "Jl. Raya Bogor KM 10",
-      rt: "01",
-      rw: "01",
-      city: "Jakarta Pusat",
-      province: "DKI Jakarta",
-    },
-    {
-      name: "Rizky Afiansyah",
-      nik: "1234567890",
-      jeniskelamin: "Laki-Laki",
-      address: "Jl. Raya Bogor KM 10",
-      rt: "01",
-      rw: "01",
-      city: "Jakarta Pusat",
-      province: "DKI Jakarta",
-    },
-  ];
+  ]);
+
+  // const data = [
+  //   {
+  //     name: "Rizky Afiansyah",
+  //     nik: "1234567890",
+  //     jeniskelamin: "Laki-Laki",
+  //     address: "Jl. Raya Bogor KM 10",
+  //     rt: "01",
+  //     rw: "01",
+  //     city: "Jakarta Pusat",
+  //     province: "DKI Jakarta",
+  //   },
+  //   {
+  //     name: "Rizky Afiansyah",
+  //     nik: "1234567890",
+  //     jeniskelamin: "Laki-Laki",
+  //     address: "Jl. Raya Bogor KM 10",
+  //     rt: "01",
+  //     rw: "01",
+  //     city: "Jakarta Pusat",
+  //     province: "DKI Jakarta",
+  //   },
+  //   {
+  //     name: "Rizky Afiansyah",
+  //     nik: "1234567890",
+  //     jeniskelamin: "Laki-Laki",
+  //     address: "Jl. Raya Bogor KM 10",
+  //     rt: "01",
+  //     rw: "01",
+  //     city: "Jakarta Pusat",
+  //     province: "DKI Jakarta",
+  //   },
+  //   {
+  //     name: "Rizky Afiansyah",
+  //     nik: "1234567890",
+  //     jeniskelamin: "Laki-Laki",
+  //     address: "Jl. Raya Bogor KM 10",
+  //     rt: "01",
+  //     rw: "01",
+  //     city: "Jakarta Pusat",
+  //     province: "DKI Jakarta",
+  //   },
+  //   {
+  //     name: "Rizky Afiansyah",
+  //     nik: "1234567890",
+  //     jeniskelamin: "Laki-Laki",
+  //     address: "Jl. Raya Bogor KM 10",
+  //     rt: "01",
+  //     rw: "01",
+  //     city: "Jakarta Pusat",
+  //     province: "DKI Jakarta",
+  //   },
+  // ];
   return (
-    <div className="default:w-[1110px] default:ml-[15px] default:mt-[30px] default:h-[515px] bg-white rounded">
-      <div className="flex default:pt-[26px] item-center default:ml-[29px]">
+    <div className="default:w-[1110px] 2xl:w-[1040px] ml-[15px] mt-[30px] default:h-[515px] bg-white rounded">
+      <div className="flex pt-[26px] item-center ml-[29px]">
         <div className="">
-          <h1 className="default:text-[20px] font-semibold text-Black-Normal">
-            Customer Account Data
+          <h1 className="text-[20px] font-semibold text-Black-Normal">
+            Data Customer
           </h1>
-          <p className="font-medium default:text-sm text-Greyscale-NormalHover">
-            Data diri user yang terdaftar
+          <p className="text-sm font-medium text-Greyscale-NormalHover">
+            Data Customer yang tersedia
           </p>
         </div>
-        <select className="default:w-[223px] appearance-none default:ml-[255px] default:h-[48px] px-3 rounded-md border border-Info-NormalActive text-Info-NormalActive">
-          <option value="Bandung">Bandung</option>
-          <option value="Jakarta">Jakarta</option>
-          <option value="Jogyakarta">Jogyakarta</option>
-          <option value="Solo">Solo</option>
-          <option value="Padang">Padang</option>
-        </select>
-        <HiChevronDown className="absolute top-[155px] right-[420px] text-Info-NormalActive" />
+        <DropdownTable />
         <input
           placeholder="Cari"
-          className="default:w-[223px] pl-9 default:ml-[15px] default:h-[48px] px-3 rounded-md border border-Info-NormalActive text-Info-NormalActive"
+          className="w-[223px] pl-9 ml-[15px] h-[48px] px-3 rounded-md border border-Info-NormalActive text-Info-NormalActive"
         />
-        <HiOutlineSearch className="default:ml-[15px] default:mt-[15px] text-Greyscale-NormalActive absolute top-[142px] right-[365px]" />
-        <button className="default:w-[108px] default:ml-[15px] default:h-[44px] rounded-md text-white bg-Primary-Normal default:text-[20px] font-semibold">
+        <HiOutlineSearch className="ml-[15px] mt-[15px] text-Greyscale-NormalActive absolute top-[142px] right-[360px]" />
+        <button className="w-[108px] ml-[15px] h-[44px] rounded-md text-white bg-Primary-Normal text-[20px] font-semibold">
           Search
         </button>
       </div>
-      <table className="default:w-[1070px] border-separate table-auto mx-5 xl:border-spacing-y-[18px] default:border-spacing-y-[30px]">
-        <thead className="bg-Primary-Light default:h-[43px] xl:h-[33px]">
+      <table className="default:w-[1070px] 2xl:w-[1000px] border-separate table-auto mx-5 xl:border-spacing-y-[18px] border-spacing-y-[30px]">
+        <thead className="bg-Primary-Light h-[43px] xl:h-[33px]">
           <tr>
-            <th className="font-medium default:text-sm xl:text-xs text-Black-Normal">
-              Nama
+            <th className="text-sm font-medium xl:text-xs text-Black-Normal">
+              Nama Device
             </th>
-            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
-              NIK
+            <th className="text-sm font-medium xl:text-xs text-Greyscale-NormalHover">
+              Device Eui
             </th>
-            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
-              Jenis Kelamin
+            <th className="text-sm font-medium xl:text-xs text-Greyscale-NormalHover">
+              Device Band
             </th>
-            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
-              Detail Alamat
+            <th className="text-sm font-medium xl:text-xs text-Greyscale-NormalHover">
+              Device Id
             </th>
-            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
-              RT/RW
-            </th>
-            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
-              Kota
-            </th>
-            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
-              Provinsi
-            </th>
-            <th className="font-medium default:text-sm xl:text-xs text-Greyscale-NormalHover">
+            <th className="text-sm font-medium xl:text-xs text-Greyscale-NormalHover">
               Action
             </th>
           </tr>
         </thead>
-        {data.map((item, index) => (
-          <tbody key={index} className="default:text-base xl:text-sm">
-            <tr key={index} className="default:h-[40px] xl:h-[25px]">
-              <td className="">{item.name}</td>
-              <td>{item.nik}</td>
-              <td>{item.jeniskelamin}</td>
-              <td>{item.address}</td>
-              <td>
-                {item.rt}/{item.rw}
-              </td>
-              <td>{item.city}</td>
-              <td>{item.province}</td>
-              <td className="flex items-center gap-x-2 h-[40px]">
-                <button className="font-medium text-Greyscale-Normal default:text-sm xl:text-xs">
-                  Edit
-                </button>
-                <button className="font-medium text-Danger-Normal default:text-sm xl:text-xs">
-                  Delete
+        {data.slice(0, 6).map((item, index) => (
+          <tbody key={index} className="text-base xl:text-sm">
+            <tr key={index} className="h-[40px] xl:h-[25px]">
+              <td>{item.DeviceName}</td>
+              <td>{item.DeviceEui}</td>
+              <td>{item.Band}</td>
+              <td>{item.DeviceId}</td>
+              <td className="flex items-center gap-x-2 h-[40px] justify-center">
+                <button className="w-[100px] ml-[15px] h-[20px] rounded-md text-white bg-Primary-Normal text-[12px] font-semibold">
+                  Link Device
                 </button>
               </td>
             </tr>
