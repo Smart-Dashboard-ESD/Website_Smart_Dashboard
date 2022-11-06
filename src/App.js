@@ -31,7 +31,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             {/* General Links */}
-            <Route path="/login" index element={<Login />} />
+            <Route path="/" index element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/data-diri" element={<DataDiri />} />
             <Route path="/register-device" element={<RegisterDevice />} />
