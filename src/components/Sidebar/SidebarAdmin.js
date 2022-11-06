@@ -104,7 +104,7 @@ export default function SidebarAdmin() {
           <span className="hidden text-base lg:block">Create Device</span>
         </Link>
       </div>
-      <div className="w-16 lg:w-[260px] mx-auto default:mt-[380px] xl:mt-[250px] border-t border-[#BBBBBB]">
+      <div className="w-16 lg:w-[260px] mx-auto default:mt-[330px] xl:mt-[250px] 3xl:mt-[120px] border-t border-[#BBBBBB]">
         <Link to="/profile">
           <div className="mt-6">
             <img

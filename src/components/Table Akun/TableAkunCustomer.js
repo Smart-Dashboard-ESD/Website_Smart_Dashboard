@@ -1,20 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import DropdownTable from "../Dropdown/DropdownTable";
+import axios from "axios";
+import ButtonDetailAkun from "../ButtonDetailAkun";
 
 export default function TableAkunCustomer() {
   const [data, setData] = useState([
     {
       name: "",
-      nik: "",
-      jeniskelamin: "",
-      address: "",
-      rt: "",
-      rw: "",
       city: "",
-      province: "",
+      kelurahan: "",
     },
   ]);
+
+  useEffect(() => {
+    axios
+      .get(process.env.REACT_APP_API_ENDPOINT + "/admin/getAllUser", {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        res.data.dataUser.map((element) => {
+          setData((prevData) => [
+            ...prevData,
+            {
+              name: element.name,
+              city: element.city,
+              kelurahan: element.kelurahan,
+            },
+          ]);
+        });
+      });
+  }, []);
 
   // const data = [
   //   {
@@ -69,8 +85,8 @@ export default function TableAkunCustomer() {
   //   },
   // ];
   return (
-    <div className="default:w-[1110px] 2xl:w-[1040px] ml-[15px] mt-[30px] default:h-[515px] bg-white rounded">
-      <div className="flex pt-[26px] item-center ml-[29px]">
+    <div className="default:w-[1110px] 2xl:w-[1040px] ml-[15px] mt-[30px] bg-white rounded">
+      <div className="flex pt-[26px] item-center ml-[20px]">
         <div className="">
           <h1 className="text-[20px] font-semibold text-Black-Normal">
             Data Customer
@@ -84,8 +100,8 @@ export default function TableAkunCustomer() {
           placeholder="Cari"
           className="w-[223px] pl-9 ml-[15px] h-[48px] px-3 rounded-md border border-Info-NormalActive text-Info-NormalActive"
         />
-        <HiOutlineSearch className="ml-[15px] mt-[15px] text-Greyscale-NormalActive absolute top-[142px] right-[360px]" />
-        <button className="w-[108px] ml-[15px] h-[44px] rounded-md text-white bg-Primary-Normal text-[20px] font-semibold">
+        <HiOutlineSearch className="ml-[15px] mt-[15px] text-Greyscale-NormalActive absolute top-[142px] default:right-[345px] 3xl:right-[582px]" />
+        <button className="w-[108px] ml-[10px] h-[44px] rounded-md text-white bg-Primary-Normal text-[20px] font-semibold">
           Search
         </button>
       </div>
@@ -93,33 +109,27 @@ export default function TableAkunCustomer() {
         <thead className="bg-Primary-Light h-[43px] xl:h-[33px]">
           <tr>
             <th className="text-sm font-medium xl:text-xs text-Black-Normal">
-              Nama Device
+              Nama
             </th>
             <th className="text-sm font-medium xl:text-xs text-Greyscale-NormalHover">
-              Device Eui
+              Kota
             </th>
             <th className="text-sm font-medium xl:text-xs text-Greyscale-NormalHover">
-              Device Band
-            </th>
-            <th className="text-sm font-medium xl:text-xs text-Greyscale-NormalHover">
-              Device Id
+              Kelurahan
             </th>
             <th className="text-sm font-medium xl:text-xs text-Greyscale-NormalHover">
               Action
             </th>
           </tr>
         </thead>
-        {data.slice(0, 6).map((item, index) => (
+        {data.slice(1, 7).map((item, index) => (
           <tbody key={index} className="text-base xl:text-sm">
             <tr key={index} className="h-[40px] xl:h-[25px]">
-              <td>{item.DeviceName}</td>
-              <td>{item.DeviceEui}</td>
-              <td>{item.Band}</td>
-              <td>{item.DeviceId}</td>
+              <td>{item.name}</td>
+              <td>{item.city}</td>
+              <td>{item.kelurahan}</td>
               <td className="flex items-center gap-x-2 h-[40px] justify-center">
-                <button className="w-[100px] ml-[15px] h-[20px] rounded-md text-white bg-Primary-Normal text-[12px] font-semibold">
-                  Link Device
-                </button>
+                <ButtonDetailAkun />
               </td>
             </tr>
           </tbody>
