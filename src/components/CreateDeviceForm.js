@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "@chakra-ui/react";
 
 export default function CreateDeviceForm() {
   const url = process.env.REACT_APP_API_ENDPOINT + "/admin/createDevice";

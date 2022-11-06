@@ -36,15 +36,8 @@ function App() {
             <Route path="/data-diri" element={<DataDiri />} />
             <Route path="/register-device" element={<RegisterDevice />} />
             <Route path="/username" element={<UserPassword />} />
-            <Route path="/dashboard-admin" element={<DashboardAdmin />} />
-            <Route path="/data-akun-cust" element={<DataAkunCustomer />} />
-            <Route path="/data-akun-billing" element={<DataAkunBilling />} />
-            <Route path="/data-akun-admin" element={<DataAkunAdmin />} />
-            <Route path="/data-keluhan" element={<DataKeluhan />} />
-            <Route path="/data-device" element={<DataDevice />} />
-            <Route path="/create-device" element={<CreateDevice />} />
 
-            <Route element={<RequireAuth />}>
+            <Route exact path="/" element={<RequireAuth />}>
               {/* Customer Links */}
               <Route path="/dashboard-user" element={<DashboardUser />} />
               <Route path="/tagihan" element={<Tagihan />} />
@@ -52,11 +45,21 @@ function App() {
               <Route path="/pembayaran" element={<Pembayaran />} />
 
               {/* Admin Links */}
+              <Route path="/dashboard-admin" element={<DashboardAdmin />} />
+              <Route path="/data-akun-cust" element={<DataAkunCustomer />} />
+              <Route path="/data-akun-billing" element={<DataAkunBilling />} />
+              <Route path="/data-akun-admin" element={<DataAkunAdmin />} />
+              <Route path="/data-keluhan" element={<DataKeluhan />} />
+              <Route path="/data-device" element={<DataDevice />} />
+              <Route path="/create-device" element={<CreateDevice />} />
 
               {/* Billing Links */}
-              <Route path="/dashboard-billing" element={<DashboardBilling />} />
-              <Route path="/transaksi" element={<TransaksiPelanggan />} />
-              <Route path="/harga-air" element={<HargaAir />} />
+              <Route
+                path="/dashboard-billing"
+                component={<DashboardBilling />}
+              />
+              <Route path="/transaksi" component={<TransaksiPelanggan />} />
+              <Route path="/harga-air" component={<HargaAir />} />
             </Route>
 
             {/* Missing Links */}

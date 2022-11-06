@@ -6,19 +6,19 @@ import axios from "axios";
 Chart.register(ArcElement, Tooltip);
 
 export default function DoughnutChartHari() {
-  let [data, setData] = useState("");
+  // let [data, setData] = useState("");
 
-  useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_API_ENDPOINT + "/users/devices")
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data.waterMeter.ForwardFlow);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(process.env.REACT_APP_API_ENDPOINT + "/users/devices")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setData(res.data.waterMeter.ForwardFlow);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   return (
     <div className="absolute left-0 ml-[77px] default:mt-7 xl:mt-6 default:w-[190px] default:h-[190px] xl:w-[100px] xl:h-[100px]">
@@ -30,7 +30,7 @@ export default function DoughnutChartHari() {
             datasets: [
               {
                 label: "Penggunaan Air",
-                data: [data, data],
+                data: [100, 100],
                 backgroundColor: [
                   "rgba(2, 164, 177, 1)",
                   "rgba(184, 215, 232, 1)",
@@ -45,7 +45,7 @@ export default function DoughnutChartHari() {
           }}
         />
         <div className="absolute z-0 default:flex default:items-center default:justify-center default:flex-col default:text-[31px] font-semibold text-Primary-Normal">
-          <CountUp end={data} duration={1} />
+          <CountUp end={100} duration={1} />
           <h1 className="default:text-[20px] xl:text-[10px] font-medium text-Greyscale-Normal ml-4 xl:ml-3 default:-mt-3 xl:-mt-2">
             m3
           </h1>

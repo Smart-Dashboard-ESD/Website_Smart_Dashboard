@@ -40,19 +40,21 @@ export default function ButtonDetail() {
 
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_API_ENDPOINT + "/users/devices")
+      .get(process.env.REACT_APP_API_ENDPOINT + "/users/devices", {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
       .then((res) => {
-        console.log(res.data);
-        setData([
+        setData((prevData) => [
+          ...prevData,
           {
-            MeterNumber: res.data.waterMeter.MeterNumber,
-            ForwardFlow: res.data.waterMeter.ForwardFlow,
-            ReverseFlow: res.data.waterMeter.ReverseFlow,
-            WaterUnit: res.data.waterMeter.WaterUnit,
-            TimeStamp: res.data.waterMeter.TimeStamp,
-            StatusByte: res.data.waterMeter.StatusByte,
-            BatteryVoltage: res.data.waterMeter.BatteryVoltage,
-            CheckByte: res.data.waterMeter.CheckByte,
+            MeterNumber: res.data.data.MeterNumber,
+            ForwardFlow: res.data.data.ForwardFlow,
+            ReverseFlow: res.data.data.ReverseFlow,
+            WaterUnit: res.data.data.WaterUnit,
+            TimeStamp: res.data.data.TimeStamp,
+            StatusByte: res.data.data.StatusByte,
+            BatteryVoltage: res.data.data.BatteryVoltage,
+            CheckByte: res.data.data.CheckByte,
           },
         ]);
       })
