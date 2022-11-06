@@ -30,19 +30,6 @@ export default function ButtonLinkDevice(props) {
   });
 
   const toast = useToast();
-  // const [deviceId, setDeviceId] = useState("");
-
-  // useEffect(() => {
-  //   axios
-  //     .get(process.env.REACT_APP_API_ENDPOINT + "/admin/getAllDevices")
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setDeviceId(res.data.device.deviceId);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
 
   function handleChange(e) {
     const newData = { ...data };

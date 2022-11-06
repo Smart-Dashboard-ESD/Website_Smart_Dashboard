@@ -75,7 +75,7 @@ export default function TableDevice() {
   //     },
   //   ];
   return (
-    <div className="default:w-[1110px] 2xl:w-[1040px] ml-[15px] mt-[30px] default:h-[515px] bg-white rounded">
+    <div className="default:w-[1110px] 2xl:w-[1040px] ml-[15px] mt-[30px] bg-white rounded">
       <div className="flex pt-[26px] item-center ml-[29px]">
         <div className="">
           <h1 className="text-[20px] font-semibold text-Black-Normal">
@@ -115,7 +115,7 @@ export default function TableDevice() {
             </th>
           </tr>
         </thead>
-        {dataDevices.slice(1, 7).map((item, index) => (
+        {dataDevices.slice(1, 8).map((item, index) => (
           <tbody key={index} className="text-base xl:text-sm">
             <tr key={index} className="h-[40px] xl:h-[25px]">
               <td className="justify-center ">{item.DeviceName}</td>
