@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import DropdownTable from "../Dropdown/DropdownTable";
+import { Button } from "@chakra-ui/react";
 import ButtonLinkDevice from "../ButtonLinkDevice";
 
 export default function TableDevice() {
@@ -114,16 +115,27 @@ export default function TableDevice() {
             </th>
           </tr>
         </thead>
-        {dataDevices.slice(1, 7).map((item, index) => (
+        {dataDevices.map((item, index) => (
           <tbody key={index} className="text-base xl:text-sm">
             <tr key={index} className="h-[40px] xl:h-[25px]">
               <td className="justify-center ">{item.DeviceName}</td>
               <td className="justify-center ">{item.DeviceEui}</td>
               <td className="justify-center ">{item.Band}</td>
               <td className="justify-center ">{item.DeviceIdAntares}</td>
-              <td className="flex items-center gap-x-2 h-[40px] justify-center">
-                <ButtonLinkDevice />
-              </td>
+              {item.DeviceIdAntares ? (
+                <td className="flex items-center gap-x-2 h-[40px] justify-center">
+                  <Button colorScheme="red" disabled>
+                    Already Linked !
+                  </Button>
+                </td>
+              ) : (
+                <td className="flex items-center gap-x-2 h-[40px] justify-center">
+                  <ButtonLinkDevice
+                    devid={item.DeviceId}
+                    name={item.DeviceName}
+                  />
+                </td>
+              )}
             </tr>
           </tbody>
         ))}

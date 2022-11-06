@@ -12,34 +12,37 @@ import {
   Input,
   FormControl,
   FormLabel,
+  useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
 
-export default function ButtonLinkDevice() {
+export default function ButtonLinkDevice(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const url = process.env.REACT_APP_API_ENDPOINT + "/admin/linkDevice";
   const [data, setData] = useState({
-    DeviceEui: "",
-    CustomerId: "",
-    DeviceIdAntares: "",
-    Band: "",
-    Activation: "",
-    UserId: "",
+    device_eui: "",
+    DeviceName: props.name,
+    device_id: props.devid,
+    device_id_antares: "",
+    band: "",
+    activation: "",
+    customer_id: "",
   });
 
-  const [deviceId, setDeviceId] = useState("");
+  const toast = useToast();
+  // const [deviceId, setDeviceId] = useState("");
 
-  useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_API_ENDPOINT + "/admin/getAllDevices")
-      .then((res) => {
-        console.log(res.data);
-        setDeviceId(res.data.device.deviceId);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(process.env.REACT_APP_API_ENDPOINT + "/admin/getAllDevices")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setDeviceId(res.data.device.deviceId);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   function handleChange(e) {
     const newData = { ...data };
@@ -49,9 +52,43 @@ export default function ButtonLinkDevice() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    axios.post(url, data).then((res) => {
-      console.log(res);
-    });
+    console.log(data);
+    axios
+      .post(url, data, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.message == "Link created") {
+          toast({
+            title: "Link created.",
+            description: "Device has been connected to User",
+            status: "success",
+            duration: 9000,
+            isClosable: true,
+          });
+        } else if (
+          res.data.message == "Device already registered by other user!"
+        ) {
+          toast({
+            title: "Link Failed",
+            description: "Device already registered by other user!",
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+          });
+        } else {
+          toast({
+            title: "Link Failed",
+            description: "error",
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+          });
+        }
+        console.log(res);
+      });
   }
 
   const initialRef = React.useRef(null);
@@ -69,13 +106,13 @@ export default function ButtonLinkDevice() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Link your device</ModalHeader>
+          <ModalHeader>Link device</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Customer ID</FormLabel>
               <Input
-                value={data.UserId}
+                id="customer_id"
                 onChange={(e) => handleChange(e)}
                 placeholder="Customer ID"
               />
@@ -83,15 +120,26 @@ export default function ButtonLinkDevice() {
             <FormControl mt={4}>
               <FormLabel>Device ID</FormLabel>
               <Input
-                value={deviceId}
+                id="device_id"
+                value={props.devid}
                 onChange={(e) => handleChange(e)}
                 readOnly={true}
               />
             </FormControl>
             <FormControl mt={4}>
+              <FormLabel>Device Name</FormLabel>
+              <Input
+                id="DeviceName"
+                value={props.name}
+                onChange={(e) => handleChange(e)}
+                placeholder="Device Name"
+                readOnly
+              />
+            </FormControl>
+            <FormControl mt={4}>
               <FormLabel>Device EUI</FormLabel>
               <Input
-                value={data.DeviceEui}
+                id="device_eui"
                 onChange={(e) => handleChange(e)}
                 placeholder="Device EUI"
               />
@@ -99,7 +147,7 @@ export default function ButtonLinkDevice() {
             <FormControl mt={4}>
               <FormLabel>Device ID Antares</FormLabel>
               <Input
-                value={data.DeviceIdAntares}
+                id="device_id_antares"
                 onChange={(e) => handleChange(e)}
                 placeholder="Device ID Antares"
               />
@@ -107,7 +155,7 @@ export default function ButtonLinkDevice() {
             <FormControl mt={4}>
               <FormLabel>Activation</FormLabel>
               <Input
-                value={data.Activation}
+                id="activation"
                 onChange={(e) => handleChange(e)}
                 placeholder="Activation"
               />
@@ -115,7 +163,7 @@ export default function ButtonLinkDevice() {
             <FormControl mt={4}>
               <FormLabel>Band</FormLabel>
               <Input
-                value={data.Band}
+                id="band"
                 onChange={(e) => handleChange(e)}
                 placeholder="Band"
               />
