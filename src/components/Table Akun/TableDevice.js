@@ -90,7 +90,7 @@ export default function TableDevice() {
           placeholder="Cari"
           className="w-[223px] pl-9 ml-[15px] h-[48px] px-3 rounded-md border border-Info-NormalActive text-Info-NormalActive"
         />
-        <HiOutlineSearch className="ml-[15px] mt-[15px] text-Greyscale-NormalActive absolute top-[142px] right-[360px]" />
+        <HiOutlineSearch className="ml-[15px] mt-[15px] text-Greyscale-NormalActive absolute top-[142px] right-[360px] 3xl:right-[602px]" />
         <button className="w-[108px] ml-[15px] h-[44px] rounded-md text-white bg-Primary-Normal text-[20px] font-semibold">
           Search
         </button>
@@ -115,7 +115,7 @@ export default function TableDevice() {
             </th>
           </tr>
         </thead>
-        {dataDevices.map((item, index) => (
+        {dataDevices.slice(1, 7).map((item, index) => (
           <tbody key={index} className="text-base xl:text-sm">
             <tr key={index} className="h-[40px] xl:h-[25px]">
               <td className="justify-center ">{item.DeviceName}</td>

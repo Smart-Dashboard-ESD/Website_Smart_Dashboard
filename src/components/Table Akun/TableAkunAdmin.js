@@ -77,7 +77,7 @@ export default function TableAkunAdmin() {
           placeholder="Cari"
           className="default:w-[223px] pl-9 default:ml-[15px] default:h-[48px] px-3 rounded-md border border-Info-NormalActive text-Info-NormalActive"
         />
-        <HiOutlineSearch className="default:ml-[15px] default:mt-[15px] text-Greyscale-NormalActive absolute top-[142px] right-[363px]" />
+        <HiOutlineSearch className="default:ml-[15px] default:mt-[15px] text-Greyscale-NormalActive absolute top-[142px] right-[363px] 3xl:right-[602px]" />
         <button className="default:w-[108px] default:ml-[15px] default:h-[44px] rounded-md text-white bg-Primary-Normal default:text-[20px] font-semibold">
           Search
         </button>
