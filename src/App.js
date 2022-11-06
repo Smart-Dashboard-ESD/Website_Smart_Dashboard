@@ -37,7 +37,7 @@ function App() {
             <Route path="/register-device" element={<RegisterDevice />} />
             <Route path="/username" element={<UserPassword />} />
 
-            <Route element={<RequireAuth />}>
+            <Route exact path="/" element={<RequireAuth />}>
               {/* Customer Links */}
               <Route path="/dashboard-user" element={<DashboardUser />} />
               <Route path="/tagihan" element={<Tagihan />} />
@@ -54,9 +54,12 @@ function App() {
               <Route path="/create-device" element={<CreateDevice />} />
 
               {/* Billing Links */}
-              <Route path="/dashboard-billing" element={<DashboardBilling />} />
-              <Route path="/transaksi" element={<TransaksiPelanggan />} />
-              <Route path="/harga-air" element={<HargaAir />} />
+              <Route
+                path="/dashboard-billing"
+                component={<DashboardBilling />}
+              />
+              <Route path="/transaksi" component={<TransaksiPelanggan />} />
+              <Route path="/harga-air" component={<HargaAir />} />
             </Route>
 
             {/* Missing Links */}
