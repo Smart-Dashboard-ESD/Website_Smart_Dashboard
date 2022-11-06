@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -60,7 +60,7 @@ export default function ButtonLinkDevice(props) {
         },
       })
       .then((res) => {
-        if (res.data.message == "Link created") {
+        if (res.data.message === "Link created") {
           toast({
             title: "Link created.",
             description: "Device has been connected to User",
@@ -69,7 +69,7 @@ export default function ButtonLinkDevice(props) {
             isClosable: true,
           });
         } else if (
-          res.data.message == "Device already registered by other user!"
+          res.data.message === "Device already registered by other user!"
         ) {
           toast({
             title: "Link Failed",
