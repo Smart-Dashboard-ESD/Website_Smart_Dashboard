@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip } from "chart.js";
 import CountUp from "react-countup";
-import axios from "axios";
+// import axios from "axios";
 Chart.register(ArcElement, Tooltip);
 
 export default function DetailChart() {
@@ -25,7 +25,7 @@ export default function DetailChart() {
       <div className="left-0 ml-[77px] default:mt-7 xl:mt-6 default:w-[190px] default:h-[190px] xl:w-[100px] xl:h-[100px]">
         <div className="flex flex-col items-center justify-center">
           <Doughnut
-            className=" default:w-[190px] default:h-[190px] xl:w-[100px] xl:h-[100px]"
+            className="default:w-[190px] default:h-[190px] xl:w-[100px] xl:h-[100px]"
             data={{
               labels: ["Penggunaan Malam", "Penggunaan Pagi"],
               datasets: [
