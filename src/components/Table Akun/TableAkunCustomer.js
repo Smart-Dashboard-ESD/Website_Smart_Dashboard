@@ -32,58 +32,6 @@ export default function TableAkunCustomer() {
       });
   }, []);
 
-  // const data = [
-  //   {
-  //     name: "Rizky Afiansyah",
-  //     nik: "1234567890",
-  //     jeniskelamin: "Laki-Laki",
-  //     address: "Jl. Raya Bogor KM 10",
-  //     rt: "01",
-  //     rw: "01",
-  //     city: "Jakarta Pusat",
-  //     province: "DKI Jakarta",
-  //   },
-  //   {
-  //     name: "Rizky Afiansyah",
-  //     nik: "1234567890",
-  //     jeniskelamin: "Laki-Laki",
-  //     address: "Jl. Raya Bogor KM 10",
-  //     rt: "01",
-  //     rw: "01",
-  //     city: "Jakarta Pusat",
-  //     province: "DKI Jakarta",
-  //   },
-  //   {
-  //     name: "Rizky Afiansyah",
-  //     nik: "1234567890",
-  //     jeniskelamin: "Laki-Laki",
-  //     address: "Jl. Raya Bogor KM 10",
-  //     rt: "01",
-  //     rw: "01",
-  //     city: "Jakarta Pusat",
-  //     province: "DKI Jakarta",
-  //   },
-  //   {
-  //     name: "Rizky Afiansyah",
-  //     nik: "1234567890",
-  //     jeniskelamin: "Laki-Laki",
-  //     address: "Jl. Raya Bogor KM 10",
-  //     rt: "01",
-  //     rw: "01",
-  //     city: "Jakarta Pusat",
-  //     province: "DKI Jakarta",
-  //   },
-  //   {
-  //     name: "Rizky Afiansyah",
-  //     nik: "1234567890",
-  //     jeniskelamin: "Laki-Laki",
-  //     address: "Jl. Raya Bogor KM 10",
-  //     rt: "01",
-  //     rw: "01",
-  //     city: "Jakarta Pusat",
-  //     province: "DKI Jakarta",
-  //   },
-  // ];
   return (
     <div className="default:w-[1110px] 2xl:w-[1040px] ml-[15px] mt-[30px] bg-white rounded">
       <div className="flex pt-[26px] item-center ml-[20px]">

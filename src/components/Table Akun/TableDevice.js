@@ -37,43 +37,6 @@ export default function TableDevice() {
       });
   }, []);
 
-  //   const data = [
-  //     {
-  //       name: "Rizky Afiansyah",
-  //       kodealat: "D1029E80",
-  //       address: "Jl. Adhyaksa No 255",
-  //       nohp: "08123456789",
-  //       keluhan: "Air mati",
-  //     },
-  //     {
-  //       name: "Rizky Afiansyah",
-  //       kodealat: "D1029E80",
-  //       address: "Jl. Adhyaksa No 255",
-  //       nohp: "08123456789",
-  //       keluhan: "Air mati",
-  //     },
-  //     {
-  //       name: "Rizky Afiansyah",
-  //       kodealat: "D1029E80",
-  //       address: "Jl. Adhyaksa No 255",
-  //       nohp: "08123456789",
-  //       keluhan: "Air mati",
-  //     },
-  //     {
-  //       name: "Rizky Afiansyah",
-  //       kodealat: "D1029E80",
-  //       address: "Jl. Adhyaksa No 255",
-  //       nohp: "08123456789",
-  //       keluhan: "Air mati",
-  //     },
-  //     {
-  //       name: "Rizky Afiansyah",
-  //       kodealat: "D1029E80",
-  //       address: "Jl. Adhyaksa No 255",
-  //       nohp: "08123456789",
-  //       keluhan: "Air mati",
-  //     },
-  //   ];
   return (
     <div className="default:w-[1110px] 2xl:w-[1040px] ml-[15px] mt-[30px] bg-white rounded">
       <div className="flex pt-[26px] item-center ml-[29px]">
