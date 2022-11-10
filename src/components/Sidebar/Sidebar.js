@@ -64,6 +64,9 @@ export default function Sidebar() {
             </p>
           </div>
         </Link>
+        <Link to="/">
+          <button className="bg-Danger-Normal">Logout</button>
+        </Link>
       </div>
     </div>
   );
