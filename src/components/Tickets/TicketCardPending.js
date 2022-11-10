@@ -1,6 +1,9 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 export default function TicketCardPending() {
+  let [dataFeedback, setData] = useState([]);
+
   const data = [
     {
       id: 1235,
@@ -24,9 +27,38 @@ export default function TicketCardPending() {
       nohp: "+(62) 9090128989",
     },
   ];
+
+  useEffect(() => {
+    axios
+      .get(
+        process.env.REACT_APP_API_ENDPOINT +
+          "/users/feedback/getFeedbackById?userid=" +
+          localStorage.getItem("userid"),
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
+      )
+      .then((res) => {
+        if (res.data.message == "Get All Feedback By User") {
+          res.data.data.map((item) => {
+            console.log(item);
+            setData((prevData) => [
+              ...prevData,
+              {
+                id: item.feedbackID,
+                status: item.status,
+                date: item.createdAt,
+                pengaduan: item.feedback,
+              },
+            ]);
+          });
+        }
+      });
+  }, []);
+
   return (
     <div>
-      {data.map((item, index) => (
+      {dataFeedback.map((item, index) => (
         <div
           className="w-[378px] h-[135px] bg-white rounded mt-[13px]"
           key={index}
@@ -44,13 +76,10 @@ export default function TicketCardPending() {
               <h1 className="text-[13px] font-medium text-Greyscale-Normal">
                 {item.date}
               </h1>
-              <p className="text-[10px] font-medium text-Greyscale-Normal">
-                {item.time}
-              </p>
+              <h1 className="text-[13px] font-medium text-Greyscale-Normal">
+                {item.pengaduan}
+              </h1>
             </span>
-            <div className="text-sm font-medium text-Greyscale-Normal">
-              {item.nohp}
-            </div>
           </div>
         </div>
       ))}
