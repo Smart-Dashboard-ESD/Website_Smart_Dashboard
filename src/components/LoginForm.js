@@ -51,7 +51,8 @@ export default function LoginForm() {
             console.log(res);
             const token = res.data.token;
             localStorage.setItem("token", res.data.token);
-            localStorage.setItem("userid", res.data.id);
+            localStorage.setItem("userid", res.data.data.id);
+            localStorage.setItem("deviceid", res.data.data.device_id);
             navigate("/dashboard-user");
             setAuth({ token });
           } else {
