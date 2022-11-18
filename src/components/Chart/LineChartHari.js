@@ -32,11 +32,11 @@ export default function LineChartHari() {
         <Line
           className=" default:w-[190px] default:h-[190px] xl:w-[100px] xl:h-[100px]"
           data={{
-            labels: ["1", "2"],
+            labels: ["Minggu 1", "Minggu 2", "Minggu 3", "Minggu 4"],
             datasets: [
               {
                 label: "Daily Water Usage",
-                data: [65, 59],
+                data: [2.22, 2.35, 2.5, 2.59],
                 fill: false,
                 borderColor: "rgb(75, 192, 192)",
                 tension: 0.1,
