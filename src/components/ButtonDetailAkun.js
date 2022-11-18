@@ -20,8 +20,11 @@ import DetailDevice from "./Table Detail/DetailDevice";
 import DetailKeluhan from "./Table Detail/DetailKeluhan";
 import DetailChart from "./Table Detail/DetailChart";
 
-export default function ButtonDetailAkun() {
+export default function ButtonDetailAkun(props) {
+  console.log(props.iduser);
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  
   // const [currentPage, setCurrentPage] = useState(1);
   // const [pageSatuContentVisible, setPageSatuContentVisible] = useState(false);
   // const [pageDuaContentVisible, setPageDuaContentVisible] = useState(false);

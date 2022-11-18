@@ -10,6 +10,7 @@ export default function TableAkunCustomer() {
       name: "",
       city: "",
       kelurahan: "",
+      customerid: "",
     },
   ]);
 
@@ -26,6 +27,7 @@ export default function TableAkunCustomer() {
               name: element.name,
               city: element.city,
               kelurahan: element.kelurahan,
+              customerid: element.customerid,
             },
           ]);
         });
@@ -77,7 +79,7 @@ export default function TableAkunCustomer() {
               <td>{item.city}</td>
               <td>{item.kelurahan}</td>
               <td className="flex items-center gap-x-2 h-[40px] justify-center">
-                <ButtonDetailAkun />
+                <ButtonDetailAkun iduser={item.customerid} />
               </td>
             </tr>
           </tbody>

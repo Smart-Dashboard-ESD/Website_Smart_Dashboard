@@ -40,9 +40,9 @@ export default function CobaDropdown() {
         </select>
         <HiChevronDown className="absolute right-[12px] default:w-5 default:h-5 xl:w-[15px] xl:h-[15px] mt-2 text-Info-Normal" />
       </div>
-      {hariContentVisible && <HariIni />}
-      {mingguContentVisible && <MingguIni />}
-      {bulanContentVisible && <BulanIni />}
+      {hariContentVisible && <HariIni msg="Daily" />}
+      {mingguContentVisible && <MingguIni msg="Weekly" />}
+      {bulanContentVisible && <BulanIni msg="Monthly" />}
     </div>
   );
 }

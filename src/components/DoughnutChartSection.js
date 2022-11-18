@@ -11,9 +11,9 @@ export default function DoughnutChartSection() {
       <Dropdown />
       <div className="absolute border-t bottom-0 border-Greyscale-Normal w-[552px] xl:h-[43px] default:h-[63px] mx-[25px] flex justify-between items-center">
         <h1 className="text-sm font-medium text-[#242424]">
-          lorem ipsum dolor sit amet
+          Penggunaan Harian
         </h1>
-        <ButtonDetail />
+        {/* <ButtonDetail /> */}
       </div>
     </div>
   );
