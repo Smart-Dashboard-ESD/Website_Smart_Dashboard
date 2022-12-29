@@ -9,6 +9,7 @@ export default function LoginForm() {
   const [open, setopen] = useState(false);
   const url = process.env.REACT_APP_API_ENDPOINT + "/users/login";
   const url2 = process.env.REACT_APP_API_ENDPOINT + "/admin/login";
+  const url3 = process.env.REACT_APP_API_ENDPOINT + "/billing/login";
   const [error, setError] = useState("");
   const [data, setData] = useState({
     username: "",
@@ -63,7 +64,7 @@ export default function LoginForm() {
           console.log(err);
           setError("Username atau password salah");
         });
-    } else {
+    } else if (role === "admin") {
       axios
         .post(url2, data)
         .then((res) => {
@@ -81,6 +82,12 @@ export default function LoginForm() {
           console.log(err);
           setError("Username atau password salah");
         });
+    } else {
+      axios
+        .post(url3, data)
+        .then((res) => {
+          return null
+        })
     }
   }
 
@@ -172,6 +179,19 @@ export default function LoginForm() {
           <label className="ml-2 text-[#444444] text-base font-semibold">
             {" "}
             Admin
+          </label>
+          <input
+            id="billing"
+            type="radio"
+            name="role"
+            value="billing"
+            checked={role === "billing"}
+            className="ml-4"
+            onChange={(e) => roleHandler(e)}
+          />
+          <label className="ml-2 text-[#444444] text-base font-semibold">
+            {" "}
+            Billing
           </label>
         </div>
         <div className="flex items-center mt-[24px] ml-[32px]">
