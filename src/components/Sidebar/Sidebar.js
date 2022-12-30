@@ -6,6 +6,7 @@ import { HiOutlineChartSquareBar, HiOutlineUserGroup } from "react-icons/hi";
 
 export default function Sidebar() {
   const location = useLocation();
+  const nama = localStorage.getItem("name");
 
   return (
     <div className="default:min-h-screen sticky overflow-y-scroll bg-white w-20 lg:w-[290px]">
@@ -57,7 +58,7 @@ export default function Sidebar() {
               className="float-left w-10 h-10 ml-3 mr-3 rounded-full"
             />
             <p className="hidden text-sm font-medium lg:block">
-              Rizal Bimantoro
+              { nama }
             </p>
             <p className="hidden text-sm font-medium text-Info-Normal lg:block">
               rebimantoro@gmail.com
@@ -65,7 +66,7 @@ export default function Sidebar() {
           </div>
         </Link>
         <Link to="/">
-          <button className="bg-Danger-Normal">Logout</button>
+          <button className="bg-Danger-Normal mt-5 ml-2 w-[70px] h-[30px] text-white rounded">Logout</button>
         </Link>
       </div>
     </div>

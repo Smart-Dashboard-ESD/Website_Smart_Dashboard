@@ -1,12 +1,11 @@
 import React from "react";
-import MetodeBayar from "../../components/MetodeBayar";
 import PaymentDetail from "../../components/PaymentDetail";
-import SidebarAlt from "../../components/Sidebar/SidebarAlt";
+import SidebarPayment from "../../components/Sidebar/SidebarPayment";
 
 export default function Pembayaran() {
   return (
     <div className="flex w-screen default:min-h-screen 4xl:h-[1080px] bg-[#F3F3F3]">
-      <SidebarAlt />
+      <SidebarPayment />
       <div>
         <div className="mt-[75px] ml-[50px]">
           <h1 className="text-2xl font-bold text-Black-Normal">
@@ -18,8 +17,7 @@ export default function Pembayaran() {
             gunakan kembali air mu sesuai dengan kebutuhan
           </p>
         </div>
-        <div className="mt-[60px] ml-[50px] flex">
-          <MetodeBayar />
+        <div className="mt-[60px] ml-[300px] flex justify-center">
           <PaymentDetail />
         </div>
       </div>

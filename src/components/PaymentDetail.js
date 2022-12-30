@@ -7,7 +7,7 @@ export default function PaymentDetail() {
       <h1 className="font-semibold text-lf text-Black-Normal">
         Payment Detail
       </h1>
-      <div className="w-[450px] h-[422px] bg-white mt-4 rounded">
+      <div className="w-[450px] h-[370px] bg-white mt-4 rounded">
         <div className="flex justify-between pt-5 ml-5 mr-[26px]">
           <span>
             <h1 className="text-[25px] font-medium text-Black-Normal">
@@ -55,9 +55,6 @@ export default function PaymentDetail() {
             Konfirmasi Pembayaran
           </div>
         </Link>
-        <div className="w-[410px] h-[39px] mx-5 rounded mt-2 flex items-center justify-center text-Primary-Normal text-base font-medium">
-          Lihat Jam Operasional
-        </div>
       </div>
     </div>
   );
