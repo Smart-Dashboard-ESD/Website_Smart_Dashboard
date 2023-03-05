@@ -64,6 +64,16 @@ export default function SidebarAdmin() {
           <span className="hidden text-base lg:block">Data Akun Billing</span>
         </Link>
         <Link
+          to="/set-price-city"
+          className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-Primary-Light active:bg-Primary-NormalActive ${
+            location.pathname === "/set-price-city" &&
+            "bg-Primary-NormalActive text-Primary-Light"
+          }`}
+        >
+          <HiOutlineTicket className="w-6 h-6 lg:ml-3 lg:mr-2" />
+          <span className="hidden text-base lg:block">Atur harga</span>
+        </Link>
+        <Link
           to="/data-akun-admin"
           className={`flex flex-row items-center justify-center h-10 mb-5 font-medium rounded lg:justify-start text-Info-Normal hover:bg-Primary-NormalHover hover:text-Primary-Light active:bg-Primary-NormalActive ${
             location.pathname === "/data-akun-admin" &&
