@@ -52,6 +52,7 @@ function App() {
               <Route path="/data-keluhan" element={<DataKeluhan />} />
               <Route path="/data-device" element={<DataDevice />} />
               <Route path="/create-device" element={<CreateDevice />} />
+              {/* <Route path="/set-price-city" element={<SetPrice />} /> */}
 
               {/* Billing Links */}
               <Route
