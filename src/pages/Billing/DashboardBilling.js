@@ -10,7 +10,7 @@ import KonsumsiTerbanyak from "../../components/Statistik Billing/KonsumsiTerban
 
 export default function DashboardBilling() {
   return (
-    <div className="w-screen h-screen flex bg-[#F3F3F3]">
+    <div className="w-screen default:min-h-screen 2xl:h-[768px] 4xl:h-[1080px] flex bg-[#F3F3F3]">
       <SidebarBilling />
       <div className="">
         <Header />

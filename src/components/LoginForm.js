@@ -9,6 +9,7 @@ export default function LoginForm() {
   const [open, setopen] = useState(false);
   const url = process.env.REACT_APP_API_ENDPOINT + "/users/login";
   const url2 = process.env.REACT_APP_API_ENDPOINT + "/admin/login";
+  const url3 = process.env.REACT_APP_API_ENDPOINT + "/billing/login";
   const [error, setError] = useState("");
   const [data, setData] = useState({
     username: "",
@@ -52,6 +53,7 @@ export default function LoginForm() {
             const token = res.data.token;
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("userid", res.data.data.id);
+            localStorage.setItem("name", res.data.data.name);
             localStorage.setItem("deviceid", res.data.data.device_id);
             navigate("/dashboard-user");
             setAuth({ token });
@@ -63,7 +65,7 @@ export default function LoginForm() {
           console.log(err);
           setError("Username atau password salah");
         });
-    } else {
+    } else if (role === "admin") {
       axios
         .post(url2, data)
         .then((res) => {
@@ -81,6 +83,12 @@ export default function LoginForm() {
           console.log(err);
           setError("Username atau password salah");
         });
+    } else {
+      axios
+        .post(url3, data)
+        .then((res) => {
+          return null
+        })
     }
   }
 

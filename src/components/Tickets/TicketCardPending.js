@@ -4,29 +4,29 @@ import React, { useEffect, useState } from "react";
 export default function TicketCardPending() {
   let [dataFeedback, setData] = useState([]);
 
-  const data = [
-    {
-      id: 1235,
-      status: "In Process",
-      date: "16/10/2022",
-      time: "09:46 AM",
-      nohp: "+(62) 9090128989",
-    },
-    {
-      id: 1235,
-      status: "In Process",
-      date: "16/10/2022",
-      time: "09:46 AM",
-      nohp: "+(62) 9090128989",
-    },
-    {
-      id: 1235,
-      status: "In Process",
-      date: "16/10/2022",
-      time: "09:46 AM",
-      nohp: "+(62) 9090128989",
-    },
-  ];
+  // const data = [
+  //   {
+  //     id: 1235,
+  //     status: "In Process",
+  //     date: "16/10/2022",
+  //     time: "09:46 AM",
+  //     nohp: "+(62) 9090128989",
+  //   },
+  //   {
+  //     id: 1235,
+  //     status: "In Process",
+  //     date: "16/10/2022",
+  //     time: "09:46 AM",
+  //     nohp: "+(62) 9090128989",
+  //   },
+  //   {
+  //     id: 1235,
+  //     status: "In Process",
+  //     date: "16/10/2022",
+  //     time: "09:46 AM",
+  //     nohp: "+(62) 9090128989",
+  //   },
+  // ];
 
   useEffect(() => {
     axios
@@ -58,7 +58,7 @@ export default function TicketCardPending() {
 
   return (
     <div>
-      {dataFeedback.map((item, index) => (
+      {dataFeedback.slice(0, 3).map((item, index) => (
         <div
           className="w-[378px] h-[135px] bg-white rounded mt-[13px]"
           key={index}
